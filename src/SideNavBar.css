@@ -1,0 +1,51 @@
+.SideNavBar {
+  position: fixed;
+  display: flex;
+  width: 300px !important;
+  top: 0px !important;
+  bottom: 0px !important;
+  background-color: rgb(0, 89, 223) !important;
+  height: 100vh !important;
+}
+.SideBarList {
+  margin-right: auto;
+  margin-left: auto;
+  width: 300px;
+  height: 100%;
+}
+.SideBarList .rad {
+  position: relative;
+  top: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  width: auto;
+  height: 65px;
+  align-items: center;
+  list-style-type: none;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  color: rgb(38, 48, 48);
+  font-size: 200%;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.Active {
+  color: rgb(0, 0, 0);
+
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.SideBarList .rad:hover {
+  cursor: pointer;
+  align-items: left;
+  list-style-type: none;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  color: rgb(38, 48, 48);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 250%;
+  opacity: 0.7;
+}

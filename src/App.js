@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { Component } from "react";
+import NavigationBar from "./components/NavigationBar";
+import HomeSection from "./components/sections/HomeSection";
+import AboutSection from "./components/sections/AboutSection";
+import ProjectsSection from "./components/sections/ProjectsSection";
+import ContactSection from "./components/sections/ContactSection";
+import axios from "axios";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <HomeSection />
+        <AboutSection />
+        <ProjectsSection />
+        <ContactSection />
+        <NavigationBar />
+      </div>
+    );
+  }
 }
 
 export default App;
