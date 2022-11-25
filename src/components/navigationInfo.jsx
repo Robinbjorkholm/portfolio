@@ -6,8 +6,7 @@ import InfoIcon from "@mui/icons-material/Info";
 import ContactPageIcon from "@mui/icons-material/ContactPage";
 import "../SideNavBar.css";
 
-
-export const SideBarInfo = [
+export const navigationInfo = [
   {
     title: "Home",
     bild: <HomeIcon />,

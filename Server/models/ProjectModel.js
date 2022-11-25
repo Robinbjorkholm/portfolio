@@ -23,6 +23,16 @@ const ProjectSchema = new mongoose.Schema({
     required: true,
     default: Date.now,
   },
+  liveVersion: {
+    type: String,
+  },
+  image: {
+    data: Buffer,
+    contentType: String,
+  },
+  Code: {
+    type: String,
+  },
 });
 const Project = mongoose.model("Project", ProjectSchema);
 

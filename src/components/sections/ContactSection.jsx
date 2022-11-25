@@ -1,6 +1,5 @@
-import React, { useRef } from "react";
+import React from "react";
 import "../../Section.css";
-import useOnScreen from "../utility/useOnScreen";
 
 function ContactSection() {
   //const ref = useRef();
@@ -8,8 +7,7 @@ function ContactSection() {
 
   return (
     <div className="Section" id="Contact">
-      ContactSection
-      <h1> Contact</h1>
+      <h1 id="Header"> Contact</h1>
     </div>
   );
 }

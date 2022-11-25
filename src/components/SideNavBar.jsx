@@ -1,7 +1,6 @@
 import React from "react";
 import "../SideNavBar.css";
-import { useState } from "react";
-import { SideBarInfo } from "./SideBarInfo";
+import { navigationInfo } from "./navigationInfo";
 import { Link, animateScroll as scroll } from "react-scroll";
 import Stickybox from "react-sticky-box";
 
@@ -11,7 +10,7 @@ function SideNavBar() {
       <div className="SideNavBar">
         <Stickybox>
           <ul className="SideBarList">
-            {SideBarInfo.map((info, key) => {
+            {navigationInfo.map((info, key) => {
               return (
                 <li key={key} className="rad">
                   <Link
@@ -22,9 +21,9 @@ function SideNavBar() {
                     offset={-100}
                     duration={1000}
                   >
-                    <div id="title">
-                      {info.title}
-                      {info.bild}
+                    <div className="test">
+                      <p id="title">{info.title}</p>
+                      <p id="icon">{info.bild}</p>
                     </div>
                   </Link>
                 </li>

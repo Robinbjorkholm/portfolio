@@ -1,0 +1,21 @@
+.modal {
+  width: 150%;
+  border-radius: 5%;
+}
+.modalHeader {
+  display: inline;
+}
+.header {
+  display: inline;
+}
+.closeButton {
+  float: right;
+  background-color: rgb(165, 164, 164);
+  font-size: 1.5em;
+  border: none;
+}
+.projectImage {
+  margin-top: 0%;
+  height: 20em;
+  width: 100%;
+}

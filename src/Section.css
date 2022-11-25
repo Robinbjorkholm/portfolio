@@ -1,31 +1,10 @@
-* {
-  box-sizing: border-box;
+#About {
+  background-color: rgba(255, 0, 0, 0.253);
 }
-
-.Section {
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  display: flex;
-  width: 100%;
-  min-height: 30rem;
-  position: relative;
-  float: right;
+#Header {
+  color: red;
+  border-bottom: 8px solid red;
 }
-
-.helloworld {
-  padding-top: 50px;
-  display: flex;
-  font-size: 75px;
-  font-style: italic;
-  font-family: cursive;
-}
-.myAge {
-  display: inline;
-  padding-left: 20px;
-  padding-right: 20px;
-  color: rgb(240, 1, 1);
-  font-size: 20px;
-  font-style: italic;
-  font-family: cursive;
+#Contact {
+  margin-top: 650px;
 }

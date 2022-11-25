@@ -3,6 +3,7 @@ const app = express();
 const winston = require("winston");
 const logger = require("./logger");
 
+app.set("view engine", "ejs")
 require("dotenv").config();
 require("./startup/cors")(app);
 require("./startup/routes")(app);

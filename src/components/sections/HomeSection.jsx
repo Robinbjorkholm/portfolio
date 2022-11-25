@@ -1,9 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
-import "../../Section.css";
+import React, { useState, useEffect } from "react";
+import "../../HomeSection.css";
 import getAge from "../utility/ageCalculator";
-import useOnScreen from "../utility/useOnScreen";
 import "../../SideNavBar.css";
-import SideNavBar from "../SideNavBar";
 
 function HomeSection() {
   const timer = 1000;

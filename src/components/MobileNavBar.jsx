@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { SideBarInfo } from "./SideBarInfo";
+import { navigationInfo } from "./navigationInfo";
 import hamburgericon from "../pictures/hamburgericon.jpg";
 import { Link, animateScroll as scroll } from "react-scroll";
 import "../mobileNavigation.css";
@@ -12,7 +12,7 @@ function MobileNavBar() {
     <div className="mobileNavigation">
       {toggleMobileNav ? (
         <ul className="navigation">
-          {SideBarInfo.map((info, key) => {
+          {navigationInfo.map((info, key) => {
             return (
               <li key={key} className="row">
                 <Link

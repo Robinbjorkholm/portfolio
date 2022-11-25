@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "../SideNavBar.css";
 import SideNavBar from "./SideNavBar";
 import MobileNavBar from "./MobileNavBar";
-import testnav from "./testnav";
 
 class NavigationBar extends Component {
   state = {
@@ -16,7 +15,7 @@ class NavigationBar extends Component {
   }
   resize() {
     this.setState({ height: window.innerHeight, width: window.innerWidth });
-    if (this.state.height <= 700 || this.state.width <= 1000) {
+    if (this.state.height <= 480 || this.state.width <= 600) {
       this.setState({ toggleMobileNavigation: true });
     } else {
       this.setState({ toggleMobileNavigation: false });
