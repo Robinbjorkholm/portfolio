@@ -10,13 +10,17 @@
 
 .ProjectsShowcase {
   text-align: center;
+  border-radius: 25px;
   width: 270px;
   height: 40vh;
+  box-shadow: 5px 8px 8px hsl(0deg 0% 0% / 0.38);
 }
 .active {
   text-align: center;
+  border-radius: 25px;
   width: 270px;
   height: 40vh;
+  box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
 }
 
 .ProjectLiveVersionButton {

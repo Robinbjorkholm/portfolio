@@ -1,17 +1,21 @@
+import { textTransform } from "@mui/system";
 import React from "react";
 import "./modal.css";
 
-function ProjectModal({ closeModal, projectName, projectImage, projectDescription }) {
+function ProjectModal({ closeModal, projectName, projectImage, projectDescription, stackUsed }) {
+  var test = stackUsed.map(p => p + ", ");
   return (
     <div className="modal">
-      <div className="modalHeader">
-        <h1 className="header"> {projectName}</h1>
-        <button onClick={closeModal} className="closeButton">
-          X
-        </button>
-      </div>
       <img src={projectImage} className="projectImage" />
-      <p> {projectDescription}</p>
+      <h1 className="header"> {projectName}</h1>
+      <button onClick={closeModal} className="closeButton">
+        &#x2715;
+      </button>
+
+      <p id="projectDescription"> {projectDescription}</p>
+      <p id="stackUsed">
+        <strong>Stack used:</strong> {test}
+      </p>
     </div>
   );
 }

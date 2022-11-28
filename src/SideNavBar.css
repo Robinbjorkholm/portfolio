@@ -18,7 +18,7 @@
 .SideBarList #icon {
   display: inline;
 }
-@media only screen and (max-width: 851px) {
+@media only screen and (max-width: 1000px) {
   .SideBarList #title {
     display: none;
   }

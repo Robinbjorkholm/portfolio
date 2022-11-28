@@ -1,21 +1,56 @@
 .modal {
+  position: relative;
+  height: 120%;
   width: 150%;
-  border-radius: 5%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
+  border-radius: 25px;
 }
 .modalHeader {
   display: inline;
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  margin: 0 auto;
 }
 .header {
+  border-bottom: 1px solid red;
+  position: absolute;
+  left: 20px;
   display: inline;
+  z-index: 1;
 }
 .closeButton {
-  float: right;
-  background-color: rgb(165, 164, 164);
-  font-size: 1.5em;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  background: none;
   border: none;
+  position: absolute;
+  font-size: 2em;
+  color: #ccc;
+  top: 0;
+  right: 20px;
 }
+
 .projectImage {
-  margin-top: 0%;
-  height: 20em;
+  display: block;
+  position: absolute;
   width: 100%;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  height: 60%;
+}
+.closeButton:hover {
+  opacity: 1;
+}
+
+#projectDescription {
+  position: absolute;
+  bottom: 30%;
+  left: 10px;
+}
+#stackUsed {
+  position: absolute;
+  bottom: 10px;
+  left: 25px;
 }

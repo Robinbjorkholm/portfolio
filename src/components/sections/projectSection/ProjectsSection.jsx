@@ -65,6 +65,7 @@ class ProjectsSection extends Component {
                       projectName={project.projectName}
                       projectImage={project.image}
                       projectDescription={project.description}
+                      stackUsed={project.stackUsed}
                     />
                   ) : null}
                 </li>
