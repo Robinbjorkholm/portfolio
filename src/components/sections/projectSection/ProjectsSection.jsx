@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import "./ProjectSection.css";
 import { getProjects } from "../../../services/getProjectsService";
 import ProjectModal from "./ProjectModal";
@@ -8,19 +8,18 @@ class ProjectsSection extends Component {
   state = {
     Projects: [],
     selectedModalId: null,
-    isActive: false,
+    isActive: null,
   };
 
   async componentDidMount() {
     const { data } = await getProjects();
     this.setState({ Projects: data });
-    console.log(this.state.Projects);
   }
   openModal = project => {
-    this.setState({ selectedModalId: project._id });
+    this.setState({ selectedModalId: project._id, isActive: true });
   };
   closeModal = project => {
-    this.setState({ selectedModalId: null, isActive: false });
+    this.setState({ selectedModalId: null, isActive: null });
   };
 
   render() {
@@ -32,18 +31,15 @@ class ProjectsSection extends Component {
           <ul className="Projects">
             {this.state.Projects.map(project => {
               const ShowModal = project._id === this.state.selectedModalId;
+
               return (
-                <li
-                  key={project._id}
-                  className={!this.state.isActive ? "ProjectsShowcase" : "active"}
-                >
+                <li key={project._id} className={!ShowModal ? "ProjectsShowcase" : "active"}>
                   <img
                     className="ProjectImage"
                     src={project.image}
                     alt=" of Project"
                     onClick={() => {
                       this.openModal(project);
-                      this.setState({ isActive: true });
                     }}
                   />
                   <button

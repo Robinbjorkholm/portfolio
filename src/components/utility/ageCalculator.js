@@ -3,7 +3,6 @@ function getAge(date) {
   let days = " day ";
   let hours = " hour ";
   let minutes = " minute ";
-  let seconds = " second ";
 
   var today = new Date();
   var birthDate = new Date(date);
@@ -12,27 +11,23 @@ function getAge(date) {
   if (monthDiff > 1) {
     months = " months ";
   }
-  var myDay = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
-  var testing = myDay + today.getDate();
-  var daysDiff = testing - birthDate.getDate();
+
+  var daysDiff = today.getDate() - birthDate.getDate();
   if (daysDiff > 1) {
     days = " days ";
   }
+
   var hoursDiff = today.getHours() - birthDate.getHours();
   if (hoursDiff > 1) {
     hours = " hours ";
   }
-  var minDiff = today.getMinutes() - birthDate.getMinutes();
-  if (minDiff > 1) {
+
+  var minutDiff = today.getMinutes() - birthDate.getMinutes();
+  if (minutDiff > 1) {
     minutes = " minutes ";
   }
-  var secDiff = today.getSeconds() - birthDate.getSeconds();
-  if (secDiff > 1) {
-    seconds = " seconds ";
-  }
-
   var Age =
-    "i Am " +
+    "I Am " +
     YearDiff +
     " years " +
     monthDiff +
@@ -41,10 +36,8 @@ function getAge(date) {
     days +
     hoursDiff +
     hours +
-    minDiff +
-    minutes +
-    secDiff +
-    seconds;
+    minutDiff +
+    minutes;
   return Age;
 }
 
