@@ -1,13 +1,10 @@
 import React from "react";
-import "../../Section.css";
+import "./contactSection.css";
 
 function ContactSection() {
-  //const ref = useRef();
-  //const ContactisVisible = useOnScreen(ref);
-
   return (
     <div className="Section" id="Contact">
-      <h1 id="Header"> Contact</h1>
+      <h1 id="contactHeader"> Contact</h1>
     </div>
   );
 }

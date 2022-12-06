@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./ProjectSection.css";
 import { getProjects } from "../../../services/getProjectsService";
 import ProjectModal from "./ProjectModal";
-import "../../../Section.css";
+import { motion } from "framer-motion";
 
 class ProjectsSection extends Component {
   state = {
@@ -23,10 +23,11 @@ class ProjectsSection extends Component {
   };
 
   render() {
+    console.log(this.state.Projects);
     return (
       <div>
         <div className="Section">
-          <h1 id="Header">Welcome to my Projects 😀</h1>
+          <motion.h1 id="projectsHeader">Projects </motion.h1>
 
           <ul className="Projects">
             {this.state.Projects.map(project => {

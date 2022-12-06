@@ -2,15 +2,24 @@
   padding: 0;
   margin: 0px;
 }
+#projectsHeader {
+  position: relative;
+  right: 24rem;
+  font-size: 4rem;
+  font-style: italic;
+  font-family: cursive;
+  letter-spacing: -7px;
+}
+
 .Projects {
-  font-size: 62.5%;
-  margin-top: 300px;
+  position: relative;
+  margin-top: 20rem;
+  margin-left: 10rem;
   display: grid;
   list-style: none;
   justify-content: space-evenly;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20%;
-  padding-left: 10%;
 }
 
 .ProjectsShowcase {
@@ -36,15 +45,15 @@
   background-color: rgb(24, 60, 96);
   border: none;
   color: white;
-  padding: 3px 10px 3px 10px;
+  padding: 5px 10px 5px 10px;
   text-align: center;
   font-size: 0.8rem;
   border-radius: 25px;
-  position: relative;
-  bottom: 9%;
-  right: 3%;
+  position: absolute;
+  bottom: 1rem;
+  left: 1.7rem;
   cursor: pointer;
-  width: 100px;
+  width: 6rem;
 }
 
 .ProjectCodeButton {
@@ -52,15 +61,15 @@
   background-color: rgb(24, 60, 96);
   border: none;
   color: white;
-  padding: 3px 10px 3px 10px;
+  padding: 5px 10px 5px 10px;
   text-align: center;
   font-size: 0.8rem;
   border-radius: 25px;
-  position: relative;
-  bottom: 9%;
-  left: 3%;
+  position: absolute;
+  bottom: 1rem;
+  right: 1.7rem;
   cursor: pointer;
-  width: 100px;
+  width: 6rem;
 }
 .ProjectImage {
   display: flex;
@@ -81,29 +90,28 @@
 .ProjectCodeButton:hover {
   -webkit-transition-property: all;
   transition-property: all;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
-  transform: scale(1.1);
+  transform: scale(1.2);
   opacity: 1;
 }
 
 .ProjectsShowcase:hover {
   -webkit-transition-property: all;
   transition-property: all;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
-  transform: scale(1.02);
-  opacity: 1;
+  transform: scale(1.05);
 }
 .ProjectsShowcase:not(:hover) {
   -webkit-transition-property: all;
   transition-property: all;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
   transform: scale(1);
@@ -124,10 +132,31 @@
   .Projects {
     grid-template-columns: 1fr 1fr;
   }
+  #projectsHeader {
+    right: 7.5rem;
+  }
 }
 
-@media screen and (max-width: 1000px) {
+@media (max-width: 1000px) {
   .Projects {
+    position: static;
+    margin: 0 auto;
     grid-template-columns: 1fr;
+  }
+  #projectsHeader {
+    position: static;
+    margin: 0 auto;
+    margin-bottom: 10rem;
+  }
+}
+@media (max-width: 700px) {
+  #projectsHeader {
+    left: 10rem;
+  }
+}
+@media (max-width: 600px) {
+  #projectsHeader {
+    left: 4rem;
+    font-size: 4rem;
   }
 }

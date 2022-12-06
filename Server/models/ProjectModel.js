@@ -15,8 +15,8 @@ const ProjectSchema = new mongoose.Schema({
     maxlength: 300,
   },
   stackUsed: {
-    type: [String],
-    required: true,
+    data: [Buffer],
+    contentType: String,
   },
   dateCreated: {
     type: Date,
