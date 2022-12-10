@@ -7,8 +7,6 @@ function ProjectModal({ closeModal, projectName, projectImage, projectDescriptio
 
   //newLanguage[newLanguage.length - 1] = newLanguage[newLanguage.length - 1].replace(",", ".");
 
-  console.log(stackUsed);
-
   return (
     <div className="modal">
       <img src={projectImage} alt=" of my project" className="projectImage" />
@@ -25,15 +23,11 @@ function ProjectModal({ closeModal, projectName, projectImage, projectDescriptio
       </button>
       <p id="projectDescription"> {projectDescription}</p>
 
-      <ul>
+      <ul className="stackUsedUl">
         {stackUsed.map((image, key) => {
           return (
             <li key={key} className="stackUsedImgList">
-              <img
-                src={image}
-                alt="icon corresponding programming language used."
-                className="stackUsedImg"
-              />
+              <img src={image} alt="programming language." className="stackUsedImg" />
             </li>
           );
         })}

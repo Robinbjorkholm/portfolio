@@ -3,6 +3,7 @@ import "../SideNavBar.css";
 import { navigationInfo } from "./navigationInfo";
 import { Link, animateScroll as scroll } from "react-scroll";
 import Stickybox from "react-sticky-box";
+import { motion } from "framer-motion";
 
 function SideNavBar() {
   return (
@@ -12,7 +13,7 @@ function SideNavBar() {
           <ul className="SideBarList">
             {navigationInfo.map((info, key) => {
               return (
-                <li key={key} className="rad">
+                <motion.li key={key} className="rad">
                   <Link
                     activeClass="Active"
                     spy={true}
@@ -21,12 +22,17 @@ function SideNavBar() {
                     offset={-100}
                     duration={1000}
                   >
-                    <div className="test">
-                      <p id="title">{info.title}</p>
-                      <p id="icon">{info.bild}</p>
-                    </div>
+                    <motion.p
+                      id="title"
+                      initial={{ x: "-100vw", opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 1.4, type: "tween" }}
+                    >
+                      {info.title}
+                    </motion.p>
+                    <p id="icon">{info.bild}</p>
                   </Link>
-                </li>
+                </motion.li>
               );
             })}
           </ul>

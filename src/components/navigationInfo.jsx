@@ -1,6 +1,5 @@
 import React from "react";
 import HomeIcon from "@mui/icons-material/Home";
-import LeaderboardIcon from "@mui/icons-material/Leaderboard";
 import BuildIcon from "@mui/icons-material/Build";
 import InfoIcon from "@mui/icons-material/Info";
 import ContactPageIcon from "@mui/icons-material/ContactPage";
@@ -14,10 +13,6 @@ export const navigationInfo = [
   {
     title: "About",
     bild: <InfoIcon />,
-  },
-  {
-    title: "Stats",
-    bild: <LeaderboardIcon />,
   },
   {
     title: "Projects",

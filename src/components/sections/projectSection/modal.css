@@ -2,9 +2,10 @@
   padding: 0;
   margin: 0px;
 }
-
 .modal {
   position: absolute;
+  width: 120%;
+  height: 120%;
   top: -10%;
   right: -10%;
   left: -10%;
@@ -14,9 +15,15 @@
   border-radius: 25px;
   animation: openModalClick 0.8s ease forwards;
 }
+.stackUsedUl {
+  position: relative;
+  width: 100%;
+  height: 10%;
+  top: 87%;
+  left: 2rem;
+}
 
 .stackUsedImgList {
-  position: relative;
   left: 2rem;
   list-style: none;
   display: inline;
@@ -26,11 +33,12 @@
 }
 
 .stackUsedImg {
+  position: relative;
   border: 2px solid black;
   border-radius: 25px;
   width: 2.5rem;
   height: 2.5rem;
-  box-shadow: 0 0 1px 0px black inset, 0 0 1px 0px white;
+  box-shadow: 0 0 1px 1px black inset;
 }
 .stackUsedImg:hover {
   transform: scale(1.5);
@@ -38,15 +46,16 @@
   border-radius: 25px;
   width: 2.5rem;
   height: 2.5rem;
-  box-shadow: 0 0 1px 0px black inset, 0 0 1px 0px white;
+  box-shadow: 0 0 1px 1px black inset;
 }
+
 .header {
   position: absolute;
   left: 1rem;
   display: inline;
-  z-index: 1;
   color: aqua;
 }
+
 .closeButton {
   opacity: 0.5;
   background: none;
@@ -58,6 +67,27 @@
   right: 20px;
   cursor: pointer;
 }
+.closeButton:hover {
+  opacity: 1;
+}
+
+.projectImage {
+  display: block;
+  position: absolute;
+  width: 100%;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+  height: 60%;
+}
+
+#projectDescription {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  top: 17.5rem;
+  font-size: 1rem;
+}
 
 @keyframes openModalClick {
   from {
@@ -68,28 +98,4 @@
     opacity: 1;
     transform: scale(1);
   }
-}
-.closeButton:hover {
-  opacity: 1;
-}
-.projectImage {
-  display: block;
-  position: absolute;
-  width: 100%;
-  border-top-right-radius: 25px;
-  border-top-left-radius: 25px;
-  height: 60%;
-}
-#projectDescription {
-  position: absolute;
-  width: 100%;
-  height: 25%;
-  top: 17.5rem;
-  font-size: 1rem;
-}
-#stackUsed {
-  position: absolute;
-  bottom: 1rem;
-  left: 0.5rem;
-  font-size: 1rem;
 }

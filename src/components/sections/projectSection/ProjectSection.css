@@ -4,14 +4,14 @@
 }
 #projectsHeader {
   position: relative;
-  right: 24rem;
+  right: 25rem;
   font-size: 4rem;
   font-style: italic;
   font-family: cursive;
   letter-spacing: -7px;
 }
 
-.Projects {
+.ProjectsDisplay {
   position: relative;
   margin-top: 20rem;
   margin-left: 10rem;
@@ -26,16 +26,16 @@
   position: relative;
   text-align: center;
   border-radius: 25px;
-  width: 270px;
-  height: 40vh;
+  width: 17rem;
+  height: 23.5rem;
   box-shadow: 5px 8px 8px hsl(0deg 0% 0% / 0.38);
 }
 .active {
   position: relative;
   text-align: center;
   border-radius: 25px;
-  width: 270px;
-  height: 40vh;
+  width: 17rem;
+  height: 23.5rem;
   box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
   transform: scale(1.02);
 }
@@ -127,13 +127,64 @@
   transform: scale(1);
   opacity: 1;
 }
+.errorBox {
+  width: 30rem;
+  height: 8rem;
+  border: 1px solid black;
+  color: white;
+  padding: 1px;
+  margin-top: 12rem;
+}
+.errorBox #errorHeader {
+  background-color: rgb(8, 36, 107);
+}
+.errorBox #errorWebPage {
+  padding: 1px;
+  font-family: MS sans-serif;
+}
+.errorBox #errorInfo {
+  display: flex;
+  flex-direction: row;
+}
+.errorBox #errorMessage {
+  margin-top: 0.5rem;
+  font-family: MS sans-serif;
+  color: black;
+}
+.errorBox #warning {
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+  margin-right: 2.5rem;
+  height: 3rem;
+}
+@media (max-width: 800px) {
+  .errorBox {
+    margin-left: 5.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .errorBox {
+    margin-left: 0;
+  }
+}
+@media (max-width: 485px) {
+  .errorBox {
+    height: 10rem;
+    width: 25rem;
+  }
+}
+@media (max-width: 430px) {
+  .errorBox {
+    width: 20rem;
+  }
+}
 
 @media only screen and (max-width: 1630px) {
   .Projects {
     grid-template-columns: 1fr 1fr;
   }
   #projectsHeader {
-    right: 7.5rem;
+    right: 8.5rem;
   }
 }
 
