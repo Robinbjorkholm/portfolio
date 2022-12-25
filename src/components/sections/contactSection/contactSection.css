@@ -1,8 +1,120 @@
+.SectionContact {
+  flex-direction: column;
+  align-items: center;
+
+  display: flex;
+  width: 100%;
+  padding-bottom: 24%;
+  padding-top: 10%;
+  position: relative;
+  float: right;
+}
+
 #contactHeader {
   position: relative;
-  right: 24rem;
   font-size: 4rem;
   font-style: italic;
   font-family: cursive;
   letter-spacing: -7px;
+  width: 18.5rem;
+  color: #333;
+}
+.contactForm {
+  margin-top: 3rem;
+  width: 25%;
+  min-width: 22rem;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 9px;
+  box-shadow: 2px 6px 6px hsl(0deg 0% 0% / 0.38);
+}
+.contactForm #name {
+  width: 100%;
+  padding: 1.5px;
+  margin-bottom: 0.5rem;
+}
+.contactForm #email {
+  width: 100%;
+  padding: 1.5px;
+  margin-bottom: 0.5rem;
+}
+
+.contactForm #message {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 1.5px;
+  height: 5rem;
+  min-height: 2rem;
+  resize: vertical;
+}
+.contactForm #submitButton {
+  width: 30%;
+  height: 1.5rem;
+  margin: auto;
+  border-radius: 25px;
+  border: none;
+  background-color: rgb(24, 60, 96);
+  color: white;
+  opacity: 0.9;
+  transition: all;
+  transition: 0.2s;
+  margin-top: 0.7rem;
+}
+#submitButton:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+#submitButton:disabled {
+  background-color: grey;
+}
+#submitButton:disabled:hover {
+  opacity: 0.9;
+  cursor: auto;
+}
+
+#phoneInfo {
+  position: absolute;
+  background-color: rgb(24, 60, 96);
+  height: 5rem;
+  width: 22rem;
+  border-radius: 5px;
+  bottom: 0px;
+}
+
+#phoneIcon {
+  color: rgba(255, 255, 255, 0.774);
+  width: 3rem;
+  height: 3rem;
+  transform: rotate(100deg);
+  position: absolute;
+  top: 1.1rem;
+  left: 1rem;
+}
+#phoneNumber {
+  color: rgba(255, 255, 255, 0.774);
+  position: absolute;
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  left: 5rem;
+  top: 1.5rem;
+}
+
+@media (max-width: 45em) {
+  .contactForm {
+    margin-left: 6rem;
+  }
+  #phoneInfo {
+    margin-left: 6rem;
+  }
+}
+@media (max-width: 37.5em) {
+  .contactForm {
+    margin-left: 0rem;
+  }
+  #phoneInfo {
+    margin-left: 0rem;
+  }
+  
 }

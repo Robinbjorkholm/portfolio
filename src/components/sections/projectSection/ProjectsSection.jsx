@@ -25,66 +25,64 @@ class ProjectsSection extends Component {
 
   render() {
     return (
-      <div>
-        <div className="Section" id="Projects">
-          <motion.h1 id="projectsHeader">Projects </motion.h1>
-          {!this.state.Projects ? (
-            <ul className="ProjectsDisplay">
-              {this.state.Projects.map(project => {
-                const ShowModal = project._id === this.state.selectedModalId;
+      <div className="SectionProjects" id="Projects">
+        <motion.h1 id="projectsHeader">Projects </motion.h1>
+        {this.state.Projects.length !== 0 ? (
+          <ul className="ProjectsDisplay">
+            {this.state.Projects.map(project => {
+              const ShowModal = project._id === this.state.selectedModalId;
 
-                return (
-                  <li key={project._id} className={!ShowModal ? "ProjectsShowcase" : "active"}>
-                    <img
-                      className="ProjectImage"
-                      src={project.image}
-                      alt=" of Project"
-                      onClick={() => {
-                        this.openModal(project);
-                      }}
+              return (
+                <li key={project._id} className={!ShowModal ? "ProjectsShowcase" : "active"}>
+                  <img
+                    className="ProjectImage"
+                    src={project.image}
+                    alt=" of Project"
+                    onClick={() => {
+                      this.openModal(project);
+                    }}
+                  />
+                  <button
+                    className="ProjectLiveVersionButton"
+                    disabled={!project.liveVersion}
+                    onClick={() => window.open(project.liveVersion)}
+                  >
+                    Live version
+                  </button>
+                  <button className="ProjectCodeButton" onClick={() => window.open(project.Code)}>
+                    Code
+                  </button>
+
+                  {ShowModal ? (
+                    <ProjectModal
+                      className="modal"
+                      id="test"
+                      closeModal={this.closeModal}
+                      projectName={project.projectName}
+                      projectImage={project.image}
+                      projectDescription={project.description}
+                      stackUsed={project.stackUsed}
                     />
-                    <button
-                      className="ProjectLiveVersionButton"
-                      disabled={!project.liveVersion}
-                      onClick={() => window.open(project.liveVersion)}
-                    >
-                      Live version
-                    </button>
-                    <button className="ProjectCodeButton" onClick={() => window.open(project.Code)}>
-                      Code
-                    </button>
-
-                    {ShowModal ? (
-                      <ProjectModal
-                        className="modal"
-                        id="test"
-                        closeModal={this.closeModal}
-                        projectName={project.projectName}
-                        projectImage={project.image}
-                        projectDescription={project.description}
-                        stackUsed={project.stackUsed}
-                      />
-                    ) : null}
-                  </li>
-                );
-              })}
-            </ul>
-          ) : (
-            <div className="errorBox">
-              {" "}
-              <div id="errorHeader">
-                <p id="errorWebPage">Message from Webpage</p>{" "}
-              </div>
-              <div id="errorInfo">
-                <img id="warning" src={warningsign} alt="warning symbol" />
-                <p id="errorMessage">
-                  An unexpected error occurred. Please try again. If the problem continues, contact
-                  the person who manages your server.
-                </p>
-              </div>
+                  ) : null}
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <div className="errorBox">
+            {" "}
+            <div id="errorHeader">
+              <p id="errorWebPage">Message from Webpage</p>{" "}
             </div>
-          )}
-        </div>
+            <div id="errorInfo">
+              <img id="warning" src={warningsign} alt="warning symbol" />
+              <p id="errorMessage">
+                An unexpected error occurred. Please try again. If the problem continues, contact
+                the person who manages your server.
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     );
   }

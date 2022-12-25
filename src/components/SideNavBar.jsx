@@ -19,7 +19,7 @@ function SideNavBar() {
                     spy={true}
                     to={info.title}
                     smooth={true}
-                    offset={-100}
+                    offset={0}
                     duration={1000}
                   >
                     <motion.p
@@ -30,7 +30,7 @@ function SideNavBar() {
                     >
                       {info.title}
                     </motion.p>
-                    <p id="icon">{info.bild}</p>
+                    <p id="icon">{info.bild} </p>
                   </Link>
                 </motion.li>
               );

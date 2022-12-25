@@ -2,23 +2,38 @@
   padding: 0;
   margin: 0px;
 }
+.SectionProjects {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  margin-bottom: 10rem;
+  padding-top: 5%;
+  position: relative;
+  float: right;
+}
+
 #projectsHeader {
   position: relative;
-  right: 25rem;
   font-size: 4rem;
   font-style: italic;
   font-family: cursive;
   letter-spacing: -7px;
+  width: 18.5rem;
+  color: #333;
+  padding-top: 2rem;
+  white-space: nowrap;
 }
 
 .ProjectsDisplay {
   position: relative;
-  margin-top: 20rem;
-  margin-left: 10rem;
+  margin-top: 10rem;
+  margin-left: 17%;
+
   display: grid;
   list-style: none;
   justify-content: space-evenly;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 33%);
   gap: 20%;
 }
 
@@ -127,13 +142,15 @@
   transform: scale(1);
   opacity: 1;
 }
+
 .errorBox {
-  width: 30rem;
-  height: 8rem;
+  position: absolute;
+  max-width: 32rem;
+  height: 10rem;
   border: 1px solid black;
   color: white;
   padding: 1px;
-  margin-top: 12rem;
+  margin-top: 14rem;
 }
 .errorBox #errorHeader {
   background-color: rgb(8, 36, 107);
@@ -157,57 +174,56 @@
   margin-right: 2.5rem;
   height: 3rem;
 }
-@media (max-width: 800px) {
-  .errorBox {
-    margin-left: 5.5rem;
+
+@media (max-width: 88em) {
+  .ProjectsDisplay {
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 50%);
+    margin-top: 3rem;
+
+    row-gap: 5rem;
   }
 }
-@media (max-width: 600px) {
-  .errorBox {
-    margin-left: 0;
+@media (max-width: 70em) {
+  .ProjectsDisplay {
+    grid-template-columns: repeat(1, 100%);
+    margin-top: 3rem;
+
+    row-gap: 5rem;
+  }
+  #projectsHeader {
+    padding-left: 2.5rem;
+  }
+  #AboutHeader {
+    padding-left: 2.5rem;
+  }
+  #contactHeader {
+    padding-left: 2.5rem;
   }
 }
-@media (max-width: 485px) {
+@media (max-width: 50em) {
+  .errorBox {
+    margin-left: 8rem;
+    max-width: 28rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .errorBox {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 30em) {
   .errorBox {
     height: 10rem;
-    width: 25rem;
+    max-width: 22rem;
   }
 }
-@media (max-width: 430px) {
+@media (max-width: 26em) {
   .errorBox {
     width: 20rem;
-  }
-}
-
-@media only screen and (max-width: 1630px) {
-  .Projects {
-    grid-template-columns: 1fr 1fr;
-  }
-  #projectsHeader {
-    right: 8.5rem;
-  }
-}
-
-@media (max-width: 1000px) {
-  .Projects {
-    position: static;
-    margin: 0 auto;
-    grid-template-columns: 1fr;
-  }
-  #projectsHeader {
-    position: static;
-    margin: 0 auto;
-    margin-bottom: 10rem;
-  }
-}
-@media (max-width: 700px) {
-  #projectsHeader {
-    left: 10rem;
-  }
-}
-@media (max-width: 600px) {
-  #projectsHeader {
-    left: 4rem;
-    font-size: 4rem;
+    left: 3rem;
   }
 }

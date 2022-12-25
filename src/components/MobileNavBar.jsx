@@ -4,6 +4,7 @@ import { navigationInfo } from "./navigationInfo";
 import hamburgericon from "../pictures/hamburgericon.jpg";
 import { Link, animateScroll as scroll } from "react-scroll";
 import "../mobileNavigation.css";
+import { motion } from "framer-motion";
 
 function MobileNavBar() {
   const [toggleMobileNav, setMobileNav] = useState(false);
@@ -14,7 +15,13 @@ function MobileNavBar() {
         <ul className="navigation">
           {navigationInfo.map((info, key) => {
             return (
-              <li key={key} className="row">
+              <motion.li
+                initial={{ y: "-100vw", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, type: "tween", bounce: 1 }}
+                key={key}
+                className="row"
+              >
                 <Link
                   onClick={() => {
                     setMobileNav(!toggleMobileNav);
@@ -28,7 +35,7 @@ function MobileNavBar() {
                 >
                   <div id="title">{info.title}</div>
                 </Link>
-              </li>
+              </motion.li>
             );
           })}{" "}
         </ul>

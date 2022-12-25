@@ -6,7 +6,8 @@
   width: 16% !important;
   max-width: 350px;
   background-color: rgb(24, 60, 96) !important;
-  height: 100vh !important;
+  
+  height: 100%;
 }
 .SideBarList {
   width: 100%;
@@ -19,7 +20,7 @@
 .SideBarList #icon {
   display: none;
 }
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 62em) {
   .SideBarList #title {
     display: none;
   }
