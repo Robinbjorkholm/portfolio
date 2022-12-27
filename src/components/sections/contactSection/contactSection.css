@@ -15,7 +15,7 @@
   font-size: 4rem;
   font-style: italic;
   font-family: cursive;
-  letter-spacing: -7px;
+  letter-spacing: -0.5rem;
   width: 18.5rem;
   color: #333;
 }
@@ -108,6 +108,9 @@
   #phoneInfo {
     margin-left: 6rem;
   }
+  .errorBox {
+    min-width: 22rem;
+  }
 }
 @media (max-width: 37.5em) {
   .contactForm {
@@ -116,5 +119,4 @@
   #phoneInfo {
     margin-left: 0rem;
   }
-  
 }

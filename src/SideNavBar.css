@@ -6,7 +6,7 @@
   width: 16% !important;
   max-width: 350px;
   background-color: rgb(24, 60, 96) !important;
-  
+
   height: 100%;
 }
 .SideBarList {
@@ -20,12 +20,15 @@
 .SideBarList #icon {
   display: none;
 }
-@media only screen and (max-width: 62em) {
+@media (max-width: 62em) {
   .SideBarList #title {
     display: none;
   }
   .SideBarList #icon {
     display: inline;
+  }
+  .SectionContact {
+    margin-top: 5rem;
   }
 }
 

@@ -1,10 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import { navigationInfo } from "./navigationInfo";
-import hamburgericon from "../pictures/hamburgericon.jpg";
 import { Link, animateScroll as scroll } from "react-scroll";
 import "../mobileNavigation.css";
 import { motion } from "framer-motion";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { TfiClose } from "react-icons/tfi";
 
 function MobileNavBar() {
   const [toggleMobileNav, setMobileNav] = useState(false);
@@ -40,14 +41,19 @@ function MobileNavBar() {
           })}{" "}
         </ul>
       ) : null}
-      <h1>
-        <img
-          src={hamburgericon}
+      {!toggleMobileNav ? (
+        <GiHamburgerMenu
           alt="hamburger icon"
           className="hamburgerIcon"
           onClick={() => setMobileNav(!toggleMobileNav)}
         />
-      </h1>
+      ) : (
+        <TfiClose
+          alt="hamburger icon"
+          className="closeMobileNav"
+          onClick={() => setMobileNav(!toggleMobileNav)}
+        />
+      )}
     </div>
   );
 }

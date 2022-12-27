@@ -10,12 +10,21 @@
 
 .hamburgerIcon {
   position: fixed;
-  top: 1.55rem;
-  right: 1.5rem;
+  top: 0.5rem;
+  right: 0.5rem;
   display: flex;
   width: 3rem;
   height: 3rem;
-  border-radius: 50%;
+  color: rgb(150, 149, 149);
+}
+.closeMobileNav {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  color: rgb(150, 149, 149);
 }
 
 .navigation .row {
@@ -29,7 +38,7 @@
   list-style-type: none;
   display: flex;
   flex-direction: row;
-  color: white;
+  color: #ccc;
   font-size: 300%;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
