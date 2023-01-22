@@ -1,13 +1,12 @@
 .navigation {
   position: fixed;
   background-color: black;
-  opacity: 0.7;
+  opacity: 0.9;
   right: 0px;
   top: 0px;
   width: 100%;
   height: 100%;
 }
-
 .hamburgerIcon {
   position: fixed;
   top: 0.5rem;
@@ -26,12 +25,11 @@
   height: 2rem;
   color: rgb(150, 149, 149);
 }
-
 .navigation .row {
   justify-content: center;
   height: 100vh;
   position: relative;
-  top: 20%;
+  top: 25%;
   width: 100%;
   height: 10%;
   align-items: right;

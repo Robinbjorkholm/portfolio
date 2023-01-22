@@ -3,13 +3,13 @@ const app = express();
 const winston = require("winston");
 const logger = require("./logger");
 
-app.set("view engine", "ejs")
+app.set("view engine", "ejs");
 require("dotenv").config();
 require("./startup/cors")(app);
 require("./startup/routes")(app);
 require("./startup/database")();
+require("./startup/prod")(app);
 
-const port = process.env.PORT || 3001;
-const server = app.listen(port, () => logger.error(`server started on port: ${port}`));
-
-module.exports = server;
+app.listen(process.env.PORT || 3001, () => {
+  console.log(`server started on  ${3001}`);
+});

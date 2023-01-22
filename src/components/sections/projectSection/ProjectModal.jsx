@@ -6,23 +6,41 @@ function ProjectModal({ closeModal, projectName, projectImage, projectDescriptio
   // const newLanguage = stackUsed.map(p => p + ", ");
 
   //newLanguage[newLanguage.length - 1] = newLanguage[newLanguage.length - 1].replace(",", ".");
+  const experiment = {
+    initial: {
+      transform: "scale(0) rotateY(-180deg)",
+      opacity: 0,
+    },
+    animate: {
+      transform: " scale(1) rotateY(0deg)",
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+    exit: {
+      transform: "scale(0) rotateY(180deg)",
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
 
   return (
-    <div className="modal">
-      <img src={projectImage} alt=" of my project" className="projectImage" />
-      <motion.h1
-        initial={{ y: 250, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, type: "tween" }}
-        className="header"
-      >
-        {projectName}
-      </motion.h1>
+    <motion.div
+      className="modal"
+      variants={experiment}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
+      <img src={projectImage} alt="" className="projectImage" />
+      <h1 className="header">{projectName}</h1>
       <button onClick={closeModal} className="closeButton">
         &#x2715;
       </button>
       <p id="projectDescription"> {projectDescription}</p>
-
       <ul className="stackUsedUl">
         {stackUsed.map((image, key) => {
           return (
@@ -32,7 +50,7 @@ function ProjectModal({ closeModal, projectName, projectImage, projectDescriptio
           );
         })}
       </ul>
-    </div>
+    </motion.div>
   );
 }
 

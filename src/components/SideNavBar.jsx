@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../SideNavBar.css";
 import { navigationInfo } from "./navigationInfo";
 import { Link, animateScroll as scroll } from "react-scroll";
@@ -6,9 +6,32 @@ import Stickybox from "react-sticky-box";
 import { motion } from "framer-motion";
 
 function SideNavBar() {
+  const [show, setShow] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const controlNavbar = () => {
+    if (typeof window !== "undefined") {
+      if (window.scrollY < lastScrollY) {
+        setShow(false);
+      } else {
+        setShow(true);
+      }
+      setLastScrollY(window.scrollY);
+    }
+  };
+  console.log(window.scrollY);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar);
+      return () => {
+        window.removeEventListener("scroll", controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
+
   return (
     <nav>
-      <div className="SideNavBar">
+      <div className={`SideNavBar ${show && "SideNavBarHidden"}`}>
         <Stickybox>
           <ul className="SideBarList">
             {navigationInfo.map((info, key) => {
@@ -24,8 +47,8 @@ function SideNavBar() {
                   >
                     <motion.p
                       id="title"
-                      initial={{ x: "-100vw", opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
+                      initial={{ y: "-100vh", opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
                       transition={{ duration: 1.4, type: "tween" }}
                     >
                       {info.title}

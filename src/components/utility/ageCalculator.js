@@ -1,18 +1,15 @@
 function getAge(date) {
   var today = new Date();
   var birthDate = new Date(date);
-  const year = today.getYear() - birthDate.getYear();
-  const months = today.getMonth() - birthDate.getMonth();
-  const monthDecimal = months / 12;
+  var ageMS = today.getTime() - birthDate.getTime();
 
-  const month = monthDecimal.toString();
+  var ageString = ageMS / 31556952000;
 
-  const monthString = month.substring(2);
+  var age = ageString.toString();
 
-  const month1 = monthString.substring(0, monthString.length - 10);
+  var newage = age.substring(0, 8);
 
-  const age = year + "." + month1 + " ";
-  return age;
+  return newage;
 }
 
 export default getAge;

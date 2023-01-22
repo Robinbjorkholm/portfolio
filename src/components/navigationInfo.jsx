@@ -1,26 +1,27 @@
 import React from "react";
-import HomeIcon from "@mui/icons-material/Home";
-import BuildIcon from "@mui/icons-material/Build";
-import InfoIcon from "@mui/icons-material/Info";
-import ContactPageIcon from "@mui/icons-material/ContactPage";
+
 import "../SideNavBar.css";
+import { AiFillHome } from "react-icons/ai";
+import { SlInfo } from "react-icons/sl";
+import { AiFillTool } from "react-icons/ai";
+import { MdOutlineContactPage } from "react-icons/md";
 
 export const navigationInfo = [
   {
     title: "Home",
-    bild: <HomeIcon />,
+    bild: <AiFillHome />,
   },
   {
     title: "About",
-    bild: <InfoIcon />,
+    bild: <SlInfo />,
   },
   {
     title: "Projects",
-    bild: <BuildIcon />,
+    bild: <AiFillTool />,
   },
 
   {
     title: "Contact",
-    bild: <ContactPageIcon />,
+    bild: <MdOutlineContactPage />,
   },
 ];

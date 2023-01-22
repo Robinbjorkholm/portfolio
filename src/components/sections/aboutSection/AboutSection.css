@@ -8,18 +8,24 @@
   padding-top: 5%;
   position: relative;
   float: right;
+  margin-right: auto;
+  margin-left: auto;
 }
 #AboutHeader {
+  display: inline;
   position: relative;
-  font-size: 4rem;
+  padding-top: 3rem;
+  font-size: 10rem;
+  margin-bottom: -21rem;
+  width: fit-content;
   font-style: italic;
   font-family: cursive;
   letter-spacing: -0.5rem;
-  width: 18.5rem;
-  color: #333;
-  padding-top: 2rem;
-  white-space: nowrap;
+  color: rgb(200, 200, 200);
+  margin-right: auto;
+  margin-left: auto;
 }
+
 #infoBox {
   display: grid;
   grid-template-columns: repeat(2, 50%);
@@ -32,6 +38,7 @@
   background-color: transparent;
 }
 #infoText {
+  display: inline-block;
   margin-top: 4rem;
   margin-right: 1rem;
   color: #333;
@@ -40,6 +47,15 @@
   font-family: cursive;
   text-align: left;
   line-height: 2rem;
+  resize: none;
+  overflow: auto;
+}
+
+#myAge {
+  overflow: auto;
+  display: inline;
+  resize: none;
+  width: max-content;
 }
 
 #photo {
@@ -84,6 +100,7 @@
   cursor: pointer;
   text-decoration: none;
 }
+
 @media (max-width: 85em) {
   #infoBox {
     grid-template-columns: 1fr;
@@ -109,8 +126,17 @@
   .SectionAbout {
     width: 100vw;
   }
+  #infoText {
+    font-size: 24px;
+  }
   #AboutHeader {
     margin-left: 50%;
     margin-right: 50%;
+    letter-spacing: 0;
+  }
+}
+@media (max-width: 37.5em) {
+  #infoText {
+    margin-left: 2.5rem;
   }
 }

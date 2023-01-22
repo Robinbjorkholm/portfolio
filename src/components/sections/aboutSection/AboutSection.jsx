@@ -25,8 +25,6 @@ function AboutSection() {
 
   return (
     <div className="SectionAbout" id="About">
-      <h1 id="AboutHeader">About me </h1>
-
       <div id="infoBox" style={{ backgroundImage: `url(${backgroundMap})` }}>
         {!blink ? null : (
           <div id="eyes">
@@ -49,11 +47,10 @@ function AboutSection() {
 
         <img src={photo} id="photo" alt="passportPhoto"></img>
         <div id="personalInfo">
-          {" "}
           <p id="infoText">
-            {" "}
-            Hello my friends, my name is <strong>Robin </strong>i'm <strong>{myAge}</strong> years
-            old and live in{" "}
+            Hello my friends, my name is <strong>Robin </strong>i'm{" "}
+            <strong id="myAge">{myAge}</strong>
+            &nbsp; years old and live in{" "}
             <strong
               onClick={() =>
                 window.open(

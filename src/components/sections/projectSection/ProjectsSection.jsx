@@ -33,25 +33,38 @@ class ProjectsSection extends Component {
               const ShowModal = project._id === this.state.selectedModalId;
 
               return (
-                <li key={project._id} className={!ShowModal ? "ProjectsShowcase" : "active"}>
-                  <img
+                <motion.li
+                  key={project._id}
+                  className={!ShowModal ? "ProjectsShowcase" : "active"}
+                  drag
+                  dragConstraints={{}}
+                  dragElastic={1}
+                  whileHover={{ scale: !ShowModal ? 1.1 : 1 }}
+                  initial={{ scale: 1 }}
+                >
+                  <motion.img
                     className="ProjectImage"
                     src={project.image}
-                    alt=" of Project"
+                    alt="error getting image"
                     onClick={() => {
                       this.openModal(project);
                     }}
                   />
-                  <button
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
                     className="ProjectLiveVersionButton"
                     disabled={!project.liveVersion}
                     onClick={() => window.open(project.liveVersion)}
                   >
                     Live version
-                  </button>
-                  <button className="ProjectCodeButton" onClick={() => window.open(project.Code)}>
+                  </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    className="ProjectCodeButton"
+                    onClick={() => window.open(project.Code)}
+                  >
                     Code
-                  </button>
+                  </motion.button>
 
                   {ShowModal ? (
                     <ProjectModal
@@ -64,7 +77,7 @@ class ProjectsSection extends Component {
                       stackUsed={project.stackUsed}
                     />
                   ) : null}
-                </li>
+                </motion.li>
               );
             })}
           </ul>
