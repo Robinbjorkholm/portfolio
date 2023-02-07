@@ -48,3 +48,8 @@
     width: 28rem;
   }
 }
+@media (max-width: 20em) {
+  .helloWorld {
+    font-size: 4.2rem;
+  }
+}

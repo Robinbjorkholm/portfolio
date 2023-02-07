@@ -1,54 +1,131 @@
 .SectionAbout {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  height: 50rem;
-  display: flex;
+  height: auto;
   width: 100%;
-  padding-bottom: 45%;
-  padding-top: 5%;
+  padding-top: 10%;
   position: relative;
-  float: right;
-  margin-right: auto;
-  margin-left: auto;
-}
-#AboutHeader {
-  display: inline;
-  position: relative;
-  padding-top: 3rem;
-  font-size: 10rem;
-  margin-bottom: -21rem;
-  width: fit-content;
-  font-style: italic;
-  font-family: cursive;
-  letter-spacing: -0.5rem;
-  color: rgb(200, 200, 200);
   margin-right: auto;
   margin-left: auto;
 }
 
-#infoBox {
+.GridInfoBox {
   display: grid;
-  grid-template-columns: repeat(2, 50%);
+  grid-template-columns: repeat(0, 1fr);
   position: relative;
-  width: 50rem;
-  min-height: 20rem;
-  margin-top: 7rem;
-  box-shadow: 2px 6px 6px hsl(0deg 0% 0% / 0.38);
-  border-radius: 9px;
-  background-color: transparent;
+  width: 100%;
+  row-gap: 5em;
+  justify-content: center;
 }
-#infoText {
-  display: inline-block;
-  margin-top: 4rem;
-  margin-right: 1rem;
+.AboutGridHeader {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   color: #333;
-  font-size: 20px;
-  font-style: italic;
-  font-family: cursive;
-  text-align: left;
-  line-height: 2rem;
-  resize: none;
-  overflow: auto;
+}
+.GridText {
+  margin-top: 1.1rem;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333;
+  font-family: monospace;
+  line-height: 1.3rem;
+  font-size: 1rem;
+}
+.GridText:hover {
+  cursor: default;
+}
+.Grid1 {
+  background-color: white;
+  grid-column: 1/2;
+  grid-row: 1;
+  min-height: 19.6rem;
+  border-radius: 9px;
+  text-align: center;
+  box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
+  float: left;
+}
+#showLocation {
+  font-weight: bold;
+}
+#showLocation:hover {
+  cursor: pointer;
+}
+
+.Grid2 {
+  background-color: white;
+  grid-column: 2/2;
+  grid-row: 2;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 9px;
+  box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
+  text-align: center;
+}
+.AboutHeader {
+  position: absolute;
+  opacity: 0.4;
+  grid-column: 2/2;
+  grid-row: 3;
+  bottom: 41rem;
+  right: -14rem;
+  display: inline;
+  width: 85rem;
+  font-size: 17rem;
+  color: #ccc;
+}
+.languageList {
+  position: relative;
+  top: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 0.3rem;
+}
+.arrowButton {
+  color: #333;
+  display: inline;
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 4.5rem;
+  padding-bottom: 0.7rem;
+  opacity: 0.5;
+}
+.arrowButton:hover {
+  cursor: pointer;
+}
+.languageIcon {
+  height: 5.5rem;
+  width: 5.5rem;
+}
+
+.languageIconSmall {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+.Grid3 {
+  text-align: center;
+  background-color: white;
+  width: 35vw;
+  grid-column: 1/2;
+  grid-row: 4;
+  max-width: 35rem;
+  box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
+  border-radius: 9px;
+  min-height: 15rem;
+}
+.Grid4 {
+  background-color: white;
+  grid-column: 2/2;
+  grid-row: 5;
+  height: fit-content;
+  border-radius: 9px;
+  box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
+  text-align: center;
 }
 
 #myAge {
@@ -57,86 +134,104 @@
   resize: none;
   width: max-content;
 }
-
-#photo {
-  border-radius: 50%;
-  margin: auto;
-  width: 18rem;
-  height: 14rem;
+.GitHubIcon {
+  width: 50%;
+  height: 50%;
+  margin-bottom: 2rem;
 }
-#eyes {
-  position: absolute;
-}
-#eyeBlink {
-  position: absolute;
-
-  width: 3.3rem;
-  height: 2.1rem;
-  top: 9.2rem;
-  left: 6.9rem;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 14px;
-  border-top-right-radius: 21px;
-  border-top-left-radius: 15px;
-}
-#RighteyeBlink {
-  position: absolute;
-  width: 3.4rem;
-  height: 2.1rem;
-  top: 9.6rem;
-  left: 13.8rem;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 14px;
-}
-
-#RighteyeBlink #eyeBlink#active {
-  opacity: 1;
-}
-
-#showLocation {
-  color: black;
+.GitHubIcon:hover {
   cursor: pointer;
-  text-decoration: none;
+}
+@media (max-width: 95.9375em) {
+  .AboutHeader {
+    visibility: hidden;
+    display: inline;
+    right: -28.5rem;
+    font-size: 13rem;
+  }
+  .AboutHeader::after {
+    visibility: visible;
+    content: "ABO\00a0\00a0\00a0\00a0\00a0\00a0UT";
+    letter-spacing: -0.1rem;
+  }
 }
 
-@media (max-width: 85em) {
-  #infoBox {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 50%);
-    width: 25rem;
-    min-height: 35rem;
+@media (max-width: 76.625em) {
+  .AboutHeader {
+    right: -30rem;
+    font-size: 10rem;
   }
-  #infoText {
-    margin-left: 1rem;
-    margin-top: 2rem;
-  }
-  #photo {
-    margin-top: 2rem;
-  }
-  #RighteyeBlink {
-    top: 8.7rem;
-  }
-  #eyeBlink {
-    top: 8.2rem;
+  .AboutHeader::after {
+    content: "ABOU\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0T";
   }
 }
+
+@media (max-width: 60.9375em) {
+  .AboutHeader {
+    transform: rotate(-90deg);
+    right: -2rem;
+    top: -3rem;
+    font-size: 8rem;
+  }
+  .AboutHeader::after {
+    content: "ABOUT";
+  }
+}
+
 @media (max-width: 37.5em) {
+  .GridInfoBox {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 3px;
+  }
+  .Grid1 {
+    min-height: 19.6rem;
+    min-width: 16rem;
+    width: 85vw;
+    margin-right: 2.5em;
+  }
+  .Grid2 {
+    min-height: 15rem;
+    min-width: 16rem;
+    width: 85vw;
+    margin-left: 2em;
+  }
+  .Grid3 {
+    min-width: 20rem;
+    width: 85vw;
+    margin-right: 2.5em;
+  }
+  .Grid4 {
+    min-width: 16rem;
+    width: 85vw;
+    margin-left: 2em;
+  }
   .SectionAbout {
     width: 100vw;
   }
-  #infoText {
-    font-size: 24px;
-  }
-  #AboutHeader {
-    margin-left: 50%;
-    margin-right: 50%;
-    letter-spacing: 0;
+  .AboutHeader {
+    display: none;
   }
 }
-@media (max-width: 37.5em) {
-  #infoText {
-    margin-left: 2.5rem;
+@media (max-width: 20em) {
+  .Grid1 {
+    min-height: 19.6rem;
+    width: 120vw;
+    margin-right: 2.5em;
+  }
+  .Grid2 {
+    min-height: 15rem;
+    width: 120vw;
+    margin-left: 2.5em;
+  }
+  .Grid3 {
+    width: 120vw;
+    margin-right: 2.5em;
+  }
+  .Grid4 {
+    width: 120vw;
+    margin-left: 2.5em;
   }
 }

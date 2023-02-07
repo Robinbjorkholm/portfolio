@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import NavigationBar from "./components/NavigationBar";
 import HomeSection from "./components/sections/homeSection/HomeSection";
 import AboutSection from "./components/sections/aboutSection/AboutSection";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import ProjectsSection from "./components/sections/projectSection/ProjectsSection";
 import ContactSection from "./components/sections/contactSection/ContactSection";
 

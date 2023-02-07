@@ -16,7 +16,7 @@ function HomeSection() {
     <div className="SectionHome" id="Home">
       <div className="helloWorld">
         <Typewriter
-          options={{ cursor: "_", delay: "natural" }}
+          options={{ cursor: "_", delay: "70" }}
           onInit={typewriter => {
             typewriter
               /*.callFunction(() => {

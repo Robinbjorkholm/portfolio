@@ -3,54 +3,87 @@
   align-items: center;
   display: flex;
   width: 100%;
-  padding-bottom: 24%;
-  padding-top: 10%;
+  padding-top: 25%;
   position: relative;
-  float: right;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 10rem;
+}
+.ContactHeader {
+  color: #333;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#contactHeader {
+.ContactGrid {
   position: relative;
-  font-size: 4rem;
-  font-style: italic;
-  font-family: cursive;
-  letter-spacing: -0.5rem;
-  color: #333;
-}
-.contactForm {
-  margin-top: 3rem;
-  width: 25%;
-  min-width: 22rem;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
   background-color: white;
-  padding: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 60rem;
+  min-width: 25rem;
+  height: 25rem;
   border-radius: 9px;
   box-shadow: 2px 6px 6px hsl(0deg 0% 0% / 0.38);
 }
-.contactForm #name {
-  width: 100%;
-  padding: 1.5px;
-  margin-bottom: 0.5rem;
+#divider {
+  border-left: 1% solid #333;
+  height: 100%;
+  position: absolute;
+  left: 50%;
 }
-.contactForm #email {
-  width: 100%;
-  padding: 1.5px;
-  margin-bottom: 0.5rem;
+#contactInfoGrid {
+  display: grid;
+  grid-template-rows: repeat(3, 33%);
+  margin-top: 3.5rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.contactForm #message {
+.contactForm {
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+  min-width: 14rem;
+  height: 80%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: none;
+  padding: 1rem;
+  border-radius: 9px;
+  margin-top: 1rem;
+}
+#name {
+  width: 100%;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+  height: 2.5rem;
+  font-size: 15px;
+}
+#email {
+  width: 100%;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+  height: 2.5rem;
+  font-size: 15px;
+}
+#message {
   width: 100%;
   margin-bottom: 0.5rem;
-  padding: 1.5px;
-  height: 5rem;
-  min-height: 2rem;
-  resize: vertical;
+  padding-left: 1rem;
+  padding-top: 0.6rem;
+  height: 10rem;
+  min-height: 4rem;
+  font-size: 15px;
+  resize: none;
 }
-.contactForm #submitButton {
-  width: 30%;
+#submitButton {
+  width: 100%;
   height: 1.5rem;
   margin: auto;
   border-radius: 25px;
@@ -68,58 +101,101 @@
 }
 #submitButton:disabled {
   background-color: grey;
-}
-#submitButton:disabled:hover {
-  opacity: 0.9;
   cursor: auto;
+  opacity: 0.9;
 }
-
 #phoneInfo {
-  position: absolute;
-  background-color: rgb(24, 60, 96);
+  background-color: none;
   height: 5rem;
   width: 22rem;
-  border-radius: 5px;
-  bottom: 0px;
 }
-
+#emailInfo {
+  display: flex;
+  background-color: none;
+  height: 5rem;
+  width: 22rem;
+}
 #phoneIcon {
-  color: rgba(255, 255, 255, 0.774);
+  color: #333;
   width: 3rem;
   height: 3rem;
   transform: rotate(100deg);
-  position: absolute;
-  top: 1.1rem;
-  left: 1rem;
 }
 #phoneNumber {
-  color: rgba(255, 255, 255, 0.774);
-  position: absolute;
+  margin-left: 1rem;
+  color: #333;
   font-size: 1.5rem;
   font-family: Arial, Helvetica, sans-serif;
-  left: 5rem;
-  top: 1.5rem;
+}
+#emailIcon {
+  position: absolute;
+  color: #333;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+#emailIcon:hover {
+  cursor: pointer;
+}
+#emailAddress {
+  margin-left: 4rem;
+  padding-top: 1.3rem;
+  color: #333;
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (max-width: 45em) {
+@media (max-width: 56em) {
+  .ContactGrid {
+    grid-template-columns: repeat(1, 100%);
+    height: 40rem;
+    width: 80vw;
+  }
+  #submitButton {
+    width: 6rem;
+    height: 2.5rem;
+  }
   .contactForm {
-    margin-left: 6rem;
+    width: 25rem;
   }
-  #phoneInfo {
-    margin-left: 6rem;
+  #divider {
+    display: none;
   }
-  .errorBox {
-    min-width: 22rem;
+  #contactInfoGrid {
+    gap: 5%;
   }
 }
+
 @media (max-width: 37.5em) {
+  .ContactGrid {
+    width: 100vw;
+    max-width: none;
+    min-width: 20rem;
+    border-radius: 0px;
+  }
   .contactForm {
-    margin-left: 0.6rem;
+    width: 20rem;
   }
-  #phoneInfo {
-    margin-left: 0.6rem;
+  #emailAddress {
+    font-size: 1.3rem;
   }
-  #contactHeader {
-    letter-spacing: 0;
+  #phoneNumber {
+    font-size: 1.3rem;
+  }
+
+  #submitButton {
+    width: 9rem;
+    height: 4.5rem;
+    font-size: large;
+  }
+}
+@media (max-width: 20em) {
+  .contactForm {
+    width: 80%;
+  }
+  #phoneNumber {
+    font-size: 1.2rem;
+  }
+  #emailAddress {
+    font-size: 1.2rem;
   }
 }

@@ -8,6 +8,7 @@
   margin-left: auto;
   margin-right: auto;
   transition: 0.3s linear;
+  z-index: 2;
 }
 .SideNavBarHidden {
   position: fixed;
@@ -16,7 +17,7 @@
   height: 10%;
   margin-left: auto;
   margin-right: auto;
-  top: -100px;
+  top: -110px;
   transition: 0.3s linear;
 }
 .SideNavBar:hover {
@@ -65,12 +66,6 @@
 }
 
 .SideBarList .rad:hover {
-  cursor: pointer;
-  align-items: left;
-  list-style-type: none;
-  justify-content: center;
-  display: flex;
-  flex-direction: row;
   color: rgba(255, 255, 255, 0.719);
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   opacity: 0.7;
@@ -90,5 +85,4 @@
   transition-duration: 0.5s;
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
-  transform: scale(1);
 }

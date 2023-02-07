@@ -1,4 +1,4 @@
-function getAge(date) {
+function getYear(date, decimalNumber) {
   var today = new Date();
   var birthDate = new Date(date);
   var ageMS = today.getTime() - birthDate.getTime();
@@ -7,9 +7,9 @@ function getAge(date) {
 
   var age = ageString.toString();
 
-  var newage = age.substring(0, 8);
+  var newage = age.substring(0, decimalNumber);
 
   return newage;
 }
 
-export default getAge;
+export default getYear;

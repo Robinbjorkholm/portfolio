@@ -38,7 +38,7 @@ function MobileNavBar() {
                 </Link>
               </motion.li>
             );
-          })}{" "}
+          })}
         </ul>
       ) : null}
       {!toggleMobileNav ? (

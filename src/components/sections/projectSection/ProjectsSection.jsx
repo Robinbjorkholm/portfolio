@@ -22,11 +22,12 @@ class ProjectsSection extends Component {
   closeModal = project => {
     this.setState({ selectedModalId: null, isActive: null });
   };
-
+  
   render() {
     return (
       <div className="SectionProjects" id="Projects">
-        <motion.h1 id="projectsHeader">Projects </motion.h1>
+    
+        <h1 className="ProjectsHeader">PROJECTS </h1>
         {this.state.Projects.length !== 0 ? (
           <ul className="ProjectsDisplay">
             {this.state.Projects.map(project => {
@@ -36,9 +37,6 @@ class ProjectsSection extends Component {
                 <motion.li
                   key={project._id}
                   className={!ShowModal ? "ProjectsShowcase" : "active"}
-                  drag
-                  dragConstraints={{}}
-                  dragElastic={1}
                   whileHover={{ scale: !ShowModal ? 1.1 : 1 }}
                   initial={{ scale: 1 }}
                 >
@@ -81,11 +79,11 @@ class ProjectsSection extends Component {
               );
             })}
           </ul>
+          
         ) : (
           <div className="errorBox">
-            {" "}
             <div id="errorHeader">
-              <p id="errorWebPage">Message from Webpage</p>{" "}
+              <p id="errorWebPage">Message from Webpage</p>
             </div>
             <div id="errorInfo">
               <img id="warning" src={warningsign} alt="warning symbol" />
@@ -95,6 +93,7 @@ class ProjectsSection extends Component {
               </p>
             </div>
           </div>
+          
         )}
       </div>
     );

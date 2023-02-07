@@ -1,6 +1,6 @@
 import React from "react";
 import "./modal.css";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 function ProjectModal({ closeModal, projectName, projectImage, projectDescription, stackUsed }) {
   // const newLanguage = stackUsed.map(p => p + ", ");
@@ -28,29 +28,31 @@ function ProjectModal({ closeModal, projectName, projectImage, projectDescriptio
   };
 
   return (
-    <motion.div
-      className="modal"
-      variants={experiment}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-    >
-      <img src={projectImage} alt="" className="projectImage" />
-      <h1 className="header">{projectName}</h1>
-      <button onClick={closeModal} className="closeButton">
-        &#x2715;
-      </button>
-      <p id="projectDescription"> {projectDescription}</p>
-      <ul className="stackUsedUl">
-        {stackUsed.map((image, key) => {
-          return (
-            <li key={key} className="stackUsedImgList">
-              <img src={image} alt="programming language." className="stackUsedImg" />
-            </li>
-          );
-        })}
-      </ul>
-    </motion.div>
+    <AnimatePresence>
+      <motion.div
+        className="modal"
+        variants={experiment}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+      >
+        <img src={projectImage} alt="" className="projectImage" />
+        <h1 className="header">{projectName}</h1>
+        <button onClick={closeModal} className="closeButton">
+          &#x2715;
+        </button>
+        <p id="projectDescription"> {projectDescription}</p>
+        <ul className="stackUsedUl">
+          {stackUsed.map((image, key) => {
+            return (
+              <li key={key} className="stackUsedImgList">
+                <img src={image} alt="programming language." className="stackUsedImg" />
+              </li>
+            );
+          })}
+        </ul>
+      </motion.div>
+    </AnimatePresence>
   );
 }
 

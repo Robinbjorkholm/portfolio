@@ -37,7 +37,6 @@
   border-radius: 25px;
   width: 2.5rem;
   height: 2.5rem;
-  box-shadow: 0 0 0 2px black inset;
 }
 
 .header {
@@ -67,8 +66,6 @@
   display: block;
   position: absolute;
   width: 100%;
-  border-top-right-radius: 25px;
-  border-top-left-radius: 25px;
   height: 60%;
   border-bottom: 1px solid#333b;
 }
@@ -80,4 +77,6 @@
   height: 25%;
   top: 17.5rem;
   font-size: 1rem;
+  color: #333;
+  font-family: monospace;
 }

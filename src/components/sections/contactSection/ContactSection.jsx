@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaPhone } from "react-icons/fa";
+import { AiOutlineMail } from "react-icons/ai";
 
 function ContactSection() {
   const refForm = useRef();
@@ -11,7 +12,12 @@ function ContactSection() {
   const sendEmail = e => {
     e.preventDefault();
     emailjs
-      .sendForm("service_136bjbl", "template_8ai1ch4", refForm.current, "5kptPeHCffGSde3Gy")
+      .sendForm(
+        process.env.REACT_APP_EMAIL_SERVICE,
+        process.env.REACT_APP_EMAIL_TEMPLATE,
+        refForm.current,
+        process.env.REACT_APP_EMAIL_PUBLICKEY
+      )
       .then(
         result => {
           emailSuccess();
@@ -58,47 +64,74 @@ function ContactSection() {
 
   return (
     <div className="SectionContact" id="Contact">
-      <h1 id="contactHeader"> Contact</h1>
+      <h1 className="ContactHeader">Got any questions? </h1>
+      <h3 className="ContactHeader">feel free to contact me </h3>
+      <div className="ContactGrid">
+        <div id="contactInfoGrid">
+          <div id="phoneInfo">
+            <FaPhone
+              id="phoneIcon"
+              onClick={e => {
+                e.preventDefault();
+                window.location.href = "tel:+358504210169";
+              }}
+            />
+            <a id="phoneNumber" href="tel:+358504210169">
+              +358(0)504210169
+            </a>
+          </div>
+          <div id="emailInfo">
+            <AiOutlineMail
+              id="emailIcon"
+              onClick={e => {
+                e.preventDefault();
+                window.location.href = "mailto:bjorkholmrobin@gmail.com";
+              }}
+            />
+            <a id="emailAddress" href="mailto:bjorkholmrobin@gmail.com">
+              bjorkholmrobin@gmail.com
+            </a>
+          </div>
+        </div>
+        <hr id="divider" />
+        <div>
+          <form className="contactForm" ref={refForm} name="contactForm" onSubmit={sendEmail}>
+            <input
+              placeholder="Your name"
+              type="text"
+              id="name"
+              name="name"
+              required
+              onChange={enableEmail}
+            ></input>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="Example@domain.com"
+              onChange={enableEmail}
+            ></input>
+            <textarea
+              placeholder="Message"
+              type="text"
+              id="message"
+              name="message"
+              required
+              onChange={enableEmail}
+            ></textarea>
 
-      <form className="contactForm" ref={refForm} name="contactForm">
-        <input
-          placeholder="Your name"
-          type="text"
-          id="name"
-          name="name"
-          required
-          onChange={enableEmail}
-        ></input>
-
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          placeholder="Example@domain.com"
-          onChange={enableEmail}
-        ></input>
-
-        <textarea
-          placeholder="Message"
-          type="text"
-          id="message"
-          name="message"
-          required
-          onChange={enableEmail}
-        ></textarea>
-
-        <button type="Submit" id="submitButton" disabled onKeyUp={sendEmail} title="Email required">
-          Send
-        </button>
-      </form>
-
-      <div id="phoneInfo">
-        {" "}
-        <FaPhone id="phoneIcon" />
-        <a id="phoneNumber" href="tel:+358504210169">
-          +358(0)504210169
-        </a>
+            <button
+              type="Submit"
+              id="submitButton"
+              disabled
+              onKeyUp={sendEmail}
+              title="Email required"
+            >
+              Send
+            </button>
+          </form>
+        </div>
       </div>
 
       <ToastContainer
