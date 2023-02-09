@@ -23,6 +23,16 @@
   letter-spacing: -0.6rem;
   color: #333;
   width: 38rem;
+  z-index: 1;
+}
+.HomeHeader {
+  position: absolute;
+  opacity: 0.5;
+  display: inline;
+  font-size: 17rem;
+  color: #ccc;
+  top: 10rem;
+  z-index: 0;
 }
 
 @media (max-width: 62.5em) {
@@ -38,6 +48,9 @@
   .helloWorld {
     font-size: 4rem;
   }
+  .HomeHeader {
+    font-size: 13rem;
+  }
 }
 @media (max-width: 37.5em) {
   .helloWorld {
@@ -46,6 +59,9 @@
     font-size: 3.5rem;
     margin-right: 10rem;
     width: 28rem;
+  }
+  .HomeHeader {
+    font-size: 6.5rem;
   }
 }
 @media (max-width: 20em) {

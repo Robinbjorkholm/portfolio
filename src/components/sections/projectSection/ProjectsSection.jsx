@@ -88,8 +88,9 @@ class ProjectsSection extends Component {
             <div id="errorInfo">
               <img id="warning" src={warningsign} alt="warning symbol" />
               <p id="errorMessage">
-                An unexpected error occurred. Please try again. If the problem continues, contact
-                the person who manages your server.
+
+                Please wait a minute while i fetch stuff from the backend
+            
               </p>
             </div>
           </div>

@@ -123,7 +123,7 @@
   flex-direction: row;
 }
 .errorBox #errorMessage {
-  margin-top: 0.5rem;
+  margin-top: 2rem;
   font-family: MS sans-serif;
   color: black;
 }

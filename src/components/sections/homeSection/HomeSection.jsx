@@ -20,8 +20,8 @@ function HomeSection() {
           onInit={typewriter => {
             typewriter
               /*.callFunction(() => {
-                playTypingSound();
-              })*/
+              playTypingSound();
+            })*/
               .typeString("Hello friend.")
               .typeString(" welcome to my websitr")
               .pauseFor(1000)
@@ -32,6 +32,7 @@ function HomeSection() {
           }}
         />
       </div>
+      <h1 className="HomeHeader">HOME</h1>
     </div>
   );
 }
