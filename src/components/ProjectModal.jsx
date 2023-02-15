@@ -3,12 +3,10 @@ import "./modal.css";
 import { motion, AnimatePresence } from "framer-motion";
 
 function ProjectModal({ closeModal, projectName, projectImage, projectDescription, stackUsed }) {
-  // const newLanguage = stackUsed.map(p => p + ", ");
-
-  //newLanguage[newLanguage.length - 1] = newLanguage[newLanguage.length - 1].replace(",", ".");
+ 
   const experiment = {
     initial: {
-      transform: "scale(0) rotateY(-180deg)",
+      transform: "scale(0), rotateY: 180 ",
       opacity: 0,
     },
     animate: {
@@ -18,24 +16,11 @@ function ProjectModal({ closeModal, projectName, projectImage, projectDescriptio
         duration: 0.5,
       },
     },
-    exit: {
-      transform: "scale(0) rotateY(180deg)",
-      opacity: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
   };
 
   return (
     <AnimatePresence>
-      <motion.div
-        className="modal"
-        variants={experiment}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-      >
+      <motion.div className="modal" variants={experiment} initial="initial" animate="animate">
         <img src={projectImage} alt="" className="projectImage" />
         <h1 className="header">{projectName}</h1>
         <button onClick={closeModal} className="closeButton">

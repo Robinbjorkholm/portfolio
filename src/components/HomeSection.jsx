@@ -1,8 +1,8 @@
 import React from "react";
 import "./HomeSection.css";
 import Typewriter from "typewriter-effect";
-import returnSound from "../../../sound/return.wav";
-import typingSound from "../../../sound/typing.wav";
+import returnSound from ".././sound/return.wav";
+import typingSound from ".././sound/typing.wav";
 
 function HomeSection() {
   function playReturnSound() {

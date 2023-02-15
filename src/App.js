@@ -1,10 +1,10 @@
 import "./App.css";
 import React, { Component } from "react";
 import NavigationBar from "./components/NavigationBar";
-import HomeSection from "./components/sections/homeSection/HomeSection";
-import AboutSection from "./components/sections/aboutSection/AboutSection";
-import ProjectsSection from "./components/sections/projectSection/ProjectsSection";
-import ContactSection from "./components/sections/contactSection/ContactSection";
+import HomeSection from "./components/HomeSection";
+import AboutSection from "./components/AboutSection";
+import ProjectsSection from "./components/ProjectsSection";
+import ContactSection from "./components/ContactSection";
 
 class App extends Component {
   render() {

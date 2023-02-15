@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./ProjectSection.css";
-import { getProjects } from "../../../services/getProjectsService";
+import { getProjects } from "../services/getProjectsService";
 import ProjectModal from "./ProjectModal";
 import { motion } from "framer-motion";
-import warningsign from "../../../pictures/warningsign.png";
+import warningsign from ".././pictures/warningsign.png";
 
 class ProjectsSection extends Component {
   state = {
@@ -22,11 +22,10 @@ class ProjectsSection extends Component {
   closeModal = project => {
     this.setState({ selectedModalId: null, isActive: null });
   };
-  
+
   render() {
     return (
       <div className="SectionProjects" id="Projects">
-    
         <h1 className="ProjectsHeader">PROJECTS </h1>
         {this.state.Projects.length !== 0 ? (
           <ul className="ProjectsDisplay">
@@ -38,7 +37,6 @@ class ProjectsSection extends Component {
                   key={project._id}
                   className={!ShowModal ? "ProjectsShowcase" : "active"}
                   whileHover={{ scale: !ShowModal ? 1.1 : 1 }}
-                  initial={{ scale: 1 }}
                 >
                   <motion.img
                     className="ProjectImage"
@@ -79,7 +77,6 @@ class ProjectsSection extends Component {
               );
             })}
           </ul>
-          
         ) : (
           <div className="errorBox">
             <div id="errorHeader">
@@ -87,14 +84,9 @@ class ProjectsSection extends Component {
             </div>
             <div id="errorInfo">
               <img id="warning" src={warningsign} alt="warning symbol" />
-              <p id="errorMessage">
-
-                Please wait a minute while i fetch stuff from the backend
-            
-              </p>
+              <p id="errorMessage">Please wait a minute while i fetch stuff from the database</p>
             </div>
           </div>
-          
         )}
       </div>
     );

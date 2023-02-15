@@ -3,7 +3,7 @@
   align-items: center;
   display: flex;
   width: 100%;
-  padding-top: 25%;
+  padding-top: 15%;
   position: relative;
   margin-right: auto;
   margin-left: auto;
@@ -175,6 +175,13 @@
 }
 
 @media (max-width: 37.5em) {
+  .SectionContact {
+    padding-top: 0;
+    margin-top: -5rem;
+  }
+  .contactForm {
+    margin-top: -3rem;
+  }
   .ContactGrid {
     width: 100vw;
     max-width: none;

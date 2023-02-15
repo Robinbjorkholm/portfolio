@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
-import getYear from "../../utility/yearCalculator";
+import getYear from "./utility/yearCalculator";
 import "./AboutSection.css";
 import { motion, useAnimation } from "framer-motion";
 import { VscGithubInverted } from "react-icons/vsc";
 import { useInView } from "react-intersection-observer";
-import jsIcon from "../../../pictures/jsicon.svg";
-import htmlIcon from "../../../pictures/htmlicon.svg";
-import cssIcon from "../../../pictures/cssicon.svg";
-import csharpIcon from "../../../pictures/csharpicon.svg";
-import reacticon from "../../../pictures/reacticon.svg";
-import nodejsicon from "../../../pictures/nodejsicon.svg";
-import mongodbicon from "../../../pictures/mongodbicon.svg";
+import jsIcon from ".././pictures/jsicon.svg";
+import htmlIcon from ".././pictures/htmlicon.svg";
+import cssIcon from ".././pictures/cssicon.svg";
+import csharpIcon from ".././pictures/csharpicon.svg";
+import reacticon from ".././pictures/reacticon.svg";
+import nodejsicon from ".././pictures/nodejsicon.svg";
+import mongodbicon from ".././pictures/mongodbicon.svg";
 
 function AboutSection() {
   const [myAge, setAge] = useState();
@@ -52,7 +52,7 @@ function AboutSection() {
         x: -20,
         opacity: 1,
         transition: {
-          duration: 1.1,
+          duration: 1.3,
         },
       });
     }
@@ -64,7 +64,7 @@ function AboutSection() {
         x: 20,
         opacity: 1,
         transition: {
-          duration: 1.2,
+          duration: 1.6,
         },
       });
     }
@@ -76,7 +76,7 @@ function AboutSection() {
         x: -20,
         opacity: 1,
         transition: {
-          duration: 1.3,
+          duration: 1.9,
         },
       });
     }
