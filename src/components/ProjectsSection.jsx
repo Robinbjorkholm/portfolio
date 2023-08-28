@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./ProjectSection.css";
+import "../styles/ProjectSection.css";
 import { getProjects } from "../services/getProjectsService";
 import ProjectModal from "./ProjectModal";
 import { motion } from "framer-motion";
@@ -12,14 +12,31 @@ class ProjectsSection extends Component {
     isActive: null,
   };
 
+  constructor(props) {
+    super(props);
+
+    this.outsideRef = React.createRef();
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+  }
   async componentDidMount() {
     const { data } = await getProjects();
     this.setState({ Projects: data });
+    document.addEventListener("mousedown", this.handleClickOutside);
   }
-  openModal = project => {
+  componentWillUnmount() {
+    document.removeEventListener("mousedown", this.handleClickOutside);
+  }
+  handleClickOutside(event) {
+    if (this.outsideRef && !this.outsideRef.current.contains(event.target)) {
+      this.setState({
+        selectedModalId: null,
+      });
+    }
+  }
+  openModal = (project) => {
     this.setState({ selectedModalId: project._id, isActive: true });
   };
-  closeModal = project => {
+  closeModal = (project) => {
     this.setState({ selectedModalId: null, isActive: null });
   };
 
@@ -29,14 +46,14 @@ class ProjectsSection extends Component {
         <h1 className="ProjectsHeader">PROJECTS </h1>
         {this.state.Projects.length !== 0 ? (
           <ul className="ProjectsDisplay">
-            {this.state.Projects.map(project => {
+            {this.state.Projects.map((project) => {
               const ShowModal = project._id === this.state.selectedModalId;
 
               return (
                 <motion.li
+                  ref={this.outsideRef}
                   key={project._id}
                   className={!ShowModal ? "ProjectsShowcase" : "active"}
-                  whileHover={{ scale: !ShowModal ? 1.1 : 1 }}
                 >
                   <motion.img
                     className="ProjectImage"
@@ -47,9 +64,11 @@ class ProjectsSection extends Component {
                     }}
                   />
                   <motion.button
-                    whileHover={{ scale: 1.1 }}
                     className="ProjectLiveVersionButton"
                     disabled={!project.liveVersion}
+                    whileHover={
+                      project.liveVersion ? { scale: 1.1 } : { scale: 1 }
+                    }
                     onClick={() => window.open(project.liveVersion)}
                   >
                     Live version
@@ -84,7 +103,9 @@ class ProjectsSection extends Component {
             </div>
             <div id="errorInfo">
               <img id="warning" src={warningsign} alt="warning symbol" />
-              <p id="errorMessage">Please wait a minute while i fetch stuff from the database</p>
+              <p id="errorMessage">
+                Please wait a minute while i fetch stuff from the database
+              </p>
             </div>
           </div>
         )}

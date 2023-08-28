@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { navigationInfo } from "./navigationInfo";
 import { Link, animateScroll as scroll } from "react-scroll";
-import "../mobileNavigation.css";
+import "../styles/mobileNavigation.css";
 import { motion } from "framer-motion";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { TfiClose } from "react-icons/tfi";

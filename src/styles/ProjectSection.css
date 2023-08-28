@@ -18,7 +18,7 @@
   opacity: 0.5;
   display: inline;
   font-size: 17rem;
-  color: #ccc;
+  color: #cccccc3b;
   bottom: 8rem;
   z-index: 0;
 }
@@ -34,13 +34,15 @@
 }
 
 .ProjectsShowcase {
-  background-color: white;
+  background-color: #b1d4e0;
   position: relative;
   text-align: center;
   border-radius: 25px;
   width: 17rem;
   height: 23.5rem;
-  box-shadow: 5px 8px 8px hsl(0deg 0% 0% / 0.38);
+}
+.ProjectsShowcase:hover {
+  box-shadow: 0 0 15px 10px #00407c;
 }
 
 .active {
@@ -49,7 +51,6 @@
   border-radius: 25px;
   width: 17rem;
   height: 23.5rem;
-  box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
 }
 
 .ProjectLiveVersionButton {
@@ -66,6 +67,13 @@
   left: 1.7rem;
   cursor: pointer;
   width: 6rem;
+}
+
+.ProjectLiveVersionButton:disabled {
+  opacity: 0.6;
+  background-color: grey;
+  cursor: auto;
+  scale: 1;
 }
 
 .ProjectCodeButton {
@@ -93,12 +101,6 @@
   cursor: pointer;
 }
 
-.ProjectLiveVersionButton:disabled {
-  opacity: 0.6;
-  background-color: grey;
-  cursor: not-allowed;
-}
-
 .errorBox {
   margin-left: auto;
   margin-right: auto;
@@ -106,6 +108,7 @@
   height: 10rem;
   border: 1px solid black;
   color: white;
+  background-color: white;
   padding: 1px;
   margin-top: 14rem;
 }

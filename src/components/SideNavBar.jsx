@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import "../SideNavBar.css";
+import React, { useState, useEffect, useRef } from "react";
+import "../styles/SideNavBar.css";
 import { navigationInfo } from "./navigationInfo";
 import { Link, animateScroll as scroll } from "react-scroll";
 import Stickybox from "react-sticky-box";
@@ -7,6 +7,7 @@ import Stickybox from "react-sticky-box";
 function SideNavBar() {
   const [show, setShow] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const navbarToggle = useRef(null);
 
   const controlNavbar = () => {
     if (typeof window !== "undefined") {
@@ -18,10 +19,14 @@ function SideNavBar() {
       setLastScrollY(window.scrollY);
     }
   };
+  const toggleNavbar = () => {
+    setShow(false);
+  };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", controlNavbar);
+
       return () => {
         window.removeEventListener("scroll", controlNavbar);
       };
@@ -30,6 +35,11 @@ function SideNavBar() {
 
   return (
     <nav>
+      <div
+        className="toggle-navbar"
+        ref={navbarToggle}
+        onMouseOver={toggleNavbar}
+      />
       <div className={`SideNavBar ${show && "SideNavBarHidden"}`}>
         <Stickybox>
           <ul className="SideBarList">

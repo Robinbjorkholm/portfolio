@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import getYear from "./utility/yearCalculator";
-import "./AboutSection.css";
+import "../styles/AboutSection.css";
 import { motion, useAnimation } from "framer-motion";
 import { VscGithubInverted } from "react-icons/vsc";
 import { useInView } from "react-intersection-observer";
@@ -11,6 +11,7 @@ import csharpIcon from ".././pictures/csharpicon.svg";
 import reacticon from ".././pictures/reacticon.svg";
 import nodejsicon from ".././pictures/nodejsicon.svg";
 import mongodbicon from ".././pictures/mongodbicon.svg";
+import mysqlicon from "../pictures/mysqlicon.svg";
 
 function AboutSection() {
   const [myAge, setAge] = useState();
@@ -25,13 +26,14 @@ function AboutSection() {
   const Grid3Animation = useAnimation();
   const Grid4Animation = useAnimation();
   const programmingLanguages = [
-    jsIcon,
-    htmlIcon,
-    cssIcon,
-    csharpIcon,
-    reacticon,
-    nodejsicon,
-    mongodbicon,
+    { img: jsIcon, text: "JavaScript" },
+    { img: htmlIcon, text: "HTML" },
+    { img: cssIcon, text: "CSS" },
+    { img: csharpIcon, text: "C#" },
+    { img: reacticon, text: "React" },
+    { img: nodejsicon, text: "Node.JS" },
+    { img: mongodbicon, text: "MongoDB" },
+    { img: mysqlicon, text: "MySQL" },
   ];
 
   useEffect(() => {
@@ -88,6 +90,7 @@ function AboutSection() {
     return () => clearInterval(interval);
   }, [grid1View, grid2View, grid3View, grid4View]);
 
+  // show next language
   function nextLanguage() {
     if (languageIndex + 1 === programmingLanguages.length) {
       setlanguageIndex(0);
@@ -95,6 +98,7 @@ function AboutSection() {
       setlanguageIndex(languageIndex + 1);
     }
   }
+  //show previous language
   function previousLanguage() {
     if (languageIndex === 0) {
       setlanguageIndex(programmingLanguages.length - 1);
@@ -125,7 +129,8 @@ function AboutSection() {
             >
               Jakobstad.
             </a>
-            <br />I have been coding as a hobby for about <b>{codingYears}</b> years. <br />
+            <br />I have been coding as a hobby for about <b>{codingYears}</b>{" "}
+            years. <br />
             <br />I speak <strong>Swedish</strong>,<strong>Finnish</strong> and{" "}
             <strong>English.</strong>
           </div>
@@ -138,7 +143,7 @@ function AboutSection() {
           animate={Grid2Animation}
           className="Grid2"
         >
-          <h2 className="AboutGridHeader">Experienced in </h2>
+          <h2 className="AboutGridHeader">Programming <br/>Languages</h2>
           <ul className="languageList">
             <motion.button
               whileHover={{
@@ -154,15 +159,33 @@ function AboutSection() {
               className="languageIconSmall"
               src={
                 programmingLanguages[
-                  (languageIndex - 1 + programmingLanguages.length) % programmingLanguages.length
-                ]
+                  (languageIndex - 1 + programmingLanguages.length) %
+                    programmingLanguages.length
+                ].img
               }
               alt=""
             />
-            <img className="languageIcon" src={programmingLanguages[languageIndex]} alt=""></img>
+            <div>
+              <motion.img
+                whileHover={{
+                  scale: 1.1,
+                  transition: { duration: 0.2 },
+                }}
+                className="languageIcon"
+                src={programmingLanguages[languageIndex].img}
+                alt=""
+              ></motion.img>
+              <p className="programming-language-text">
+                {programmingLanguages[languageIndex].text}
+              </p>{" "}
+            </div>
             <img
               className="languageIconSmall"
-              src={programmingLanguages[(languageIndex + 1) % programmingLanguages.length]}
+              src={
+                programmingLanguages[
+                  (languageIndex + 1) % programmingLanguages.length
+                ].img
+              }
               alt=""
             />
             <motion.button
@@ -185,7 +208,9 @@ function AboutSection() {
         >
           <h2 className="AboutGridHeader"> Hobby</h2>
           <div className="GridText">
-            In my freetime i like to build cars so im used to figuring out weird problems
+            My freetime i mostly spend at the gym 🦍, in front of my computer💻
+            or at the garage building my racecar🚗.<br></br><br></br> And the normal human stuff
+            like hanging out with friends and family and talking with my cat 😼
           </div>
         </motion.div>
         <motion.div

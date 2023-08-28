@@ -1,9 +1,14 @@
 import React from "react";
-import "./modal.css";
+import "../styles/modal.css";
 import { motion, AnimatePresence } from "framer-motion";
 
-function ProjectModal({ closeModal, projectName, projectImage, projectDescription, stackUsed }) {
- 
+function ProjectModal({
+  closeModal,
+  projectName,
+  projectImage,
+  projectDescription,
+  stackUsed,
+}) {
   const experiment = {
     initial: {
       transform: "scale(0), rotateY: 180 ",
@@ -20,7 +25,12 @@ function ProjectModal({ closeModal, projectName, projectImage, projectDescriptio
 
   return (
     <AnimatePresence>
-      <motion.div className="modal" variants={experiment} initial="initial" animate="animate">
+      <motion.div
+        className="modal"
+        variants={experiment}
+        initial="initial"
+        animate="animate"
+      >
         <img src={projectImage} alt="" className="projectImage" />
         <h1 className="header">{projectName}</h1>
         <button onClick={closeModal} className="closeButton">
@@ -31,7 +41,11 @@ function ProjectModal({ closeModal, projectName, projectImage, projectDescriptio
           {stackUsed.map((image, key) => {
             return (
               <li key={key} className="stackUsedImgList">
-                <img src={image} alt="programming language." className="stackUsedImg" />
+                <img
+                  src={image}
+                  alt="programming language."
+                  className="stackUsedImg"
+                />
               </li>
             );
           })}

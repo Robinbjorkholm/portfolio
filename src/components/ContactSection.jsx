@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "./contactSection.css";
+import "../styles/contactSection.css";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -9,7 +9,7 @@ import { AiOutlineMail } from "react-icons/ai";
 function ContactSection() {
   const refForm = useRef();
 
-  const sendEmail = e => {
+  const sendEmail = (e) => {
     e.preventDefault();
     emailjs
       .sendForm(
@@ -19,10 +19,10 @@ function ContactSection() {
         process.env.REACT_APP_EMAIL_PUBLICKEY
       )
       .then(
-        result => {
+        (result) => {
           emailSuccess();
         },
-        error => {
+        (error) => {
           emailFailure();
         }
       );
@@ -71,7 +71,7 @@ function ContactSection() {
           <div id="phoneInfo">
             <FaPhone
               id="phoneIcon"
-              onClick={e => {
+              onClick={(e) => {
                 e.preventDefault();
                 window.location.href = "tel:+358504210169";
               }}
@@ -83,7 +83,7 @@ function ContactSection() {
           <div id="emailInfo">
             <AiOutlineMail
               id="emailIcon"
-              onClick={e => {
+              onClick={(e) => {
                 e.preventDefault();
                 window.location.href = "mailto:bjorkholmrobin@gmail.com";
               }}
@@ -95,7 +95,12 @@ function ContactSection() {
         </div>
         <hr id="divider" />
         <div>
-          <form className="contactForm" ref={refForm} name="contactForm" onSubmit={sendEmail}>
+          <form
+            className="contactForm"
+            ref={refForm}
+            name="contactForm"
+            onSubmit={sendEmail}
+          >
             <input
               placeholder="Your name"
               type="text"

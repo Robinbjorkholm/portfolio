@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "../SideNavBar.css";
 import SideNavBar from "./SideNavBar";
 import MobileNavBar from "./MobileNavBar";
+import "../styles/SideNavBar.css";
 
 class NavigationBar extends Component {
   state = {
@@ -25,7 +25,11 @@ class NavigationBar extends Component {
     window.removeEventListener("resize", this.resize.bind(this));
   }
   render() {
-    return <div>{this.state.toggleMobileNavigation ? <MobileNavBar /> : <SideNavBar />};</div>;
+    return (
+      <div>
+        {this.state.toggleMobileNavigation ? <MobileNavBar /> : <SideNavBar />}
+      </div>
+    );
   }
 }
 export default NavigationBar;
