@@ -1,5 +1,2 @@
-Live version available at  https://bjorkholmrobin.fi/
+Live version available at  [https://bjorkholmrobin.fi/](https://steady-belekoy-283f9a.netlify.app/")
 
-frontend is hosted at hostingpalvelu.fi
-
-backend is hosted at Render.com
