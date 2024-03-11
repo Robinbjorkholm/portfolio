@@ -118,7 +118,7 @@ function AboutSection() {
         >
           <h2 className="AboutGridHeader">Who am i ? </h2>
           <div className="GridText">
-            I'm <strong>Robin, {myAge}</strong> years old and live in &nbsp;
+            My name is <strong>Robin {myAge}</strong> years old and live in &nbsp;
             <a
               onClick={() =>
                 window.open(
@@ -127,7 +127,7 @@ function AboutSection() {
               }
               id="showLocation"
             >
-              Jakobstad.
+              Pietarsaari.
             </a>
             <br />I have been coding as a hobby for about <b>{codingYears}</b>{" "}
             years. <br />

@@ -11,7 +11,7 @@ function HomeSection() {
           onInit={(typewriter) => {
             typewriter
 
-              .typeString("Hello Friend.")
+              .typeString("Hello world.")
               .typeString(" welcome to my websitr")
               .pauseFor(1000)
               .deleteChars(1)
