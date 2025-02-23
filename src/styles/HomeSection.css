@@ -1,4 +1,4 @@
-.SectionHome {
+.home-section {
   flex-direction: column;
   align-items: center;
   height: 52rem;
@@ -9,29 +9,43 @@
   margin-right: auto;
   margin-left: auto;
 }
-
-.helloWorld {
-  display: inline;
-  padding-top: 8rem;
-  font-size: 5.5rem;
-  font-family: monospace;
-  letter-spacing: -0.6rem;
-  color: #b1d4e0;
-  width: 38rem;
-  z-index: 1;
-}
-.HomeHeader {
+.seo-header {
   position: absolute;
-  opacity: 0.5;
-  display: inline;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.home-header {
+  position: absolute;
   font-size: 17rem;
-  color: #cccccc3b;
   top: 10rem;
   z-index: 0;
+  color: #ffffff;
+  font-family: "Anton", sans-serif;
+  letter-spacing: -3px;
+  text-shadow: -6px -6px 0 black, 6px -6px 0 black, -6px 6px 0 black,
+    6px 6px 0 black, -6px 0px 0 black, 6px 0px 0 black, 0px -6px 0 black,
+    0px 6px 0 black;
+}
+.typewriter-text {
+  padding-top: 23rem;
+  padding-left: 32px;
+  font-size: 5.5rem;
+  letter-spacing: -0.6rem;
+  width: 38rem;
+  z-index: 1;
+  line-height: 70px;
+  font-weight: bold;
+  color: white;
+  -webkit-text-stroke: 3px #ff60bf;
 }
 
 @media (max-width: 62.5em) {
-  .helloWorld {
+  .typewriter-text {
     left: 2rem;
     position: relative;
     font-size: 4rem;
@@ -40,27 +54,27 @@
   }
 }
 @media (max-width: 50em) {
-  .helloWorld {
+  .typewriter-text {
     font-size: 4rem;
   }
-  .HomeHeader {
+  .home-header {
     font-size: 13rem;
   }
 }
 @media (max-width: 37.5em) {
-  .helloWorld {
+  .typewriter-text {
     padding-top: 2rem;
     letter-spacing: 0;
     font-size: 3.5rem;
     margin-right: 10rem;
     width: 28rem;
   }
-  .HomeHeader {
+  .home-header {
     font-size: 6.5rem;
   }
 }
 @media (max-width: 20em) {
-  .helloWorld {
+  .typewriter-text {
     font-size: 4.2rem;
   }
 }

@@ -1,4 +1,4 @@
-.SectionAbout {
+.about-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,233 +9,64 @@
   margin-right: auto;
   margin-left: auto;
 }
-
-.GridInfoBox {
+.about-header {
+  position: absolute;
+  font-size: 17rem;
+  z-index: 0;
+  color: #ffffff;
+  font-family: "Anton", sans-serif;
+  letter-spacing: -3px;
+  text-shadow: -6px -6px 0 black, 6px -6px 0 black, -6px 6px 0 black,
+    6px 6px 0 black, -6px 0px 0 black, 6px 0px 0 black, 0px -6px 0 black,
+    0px 6px 0 black;
+}
+.grid-container {
   display: grid;
-  grid-template-columns: repeat(0, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   position: relative;
-  width: 100%;
-  row-gap: 5em;
+  width: 90%;
+  max-width: 100rem;
+  row-gap: 4em;
   justify-content: center;
 }
-.AboutGridHeader {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  color: #b1d4e0;
+.grid-item {
+  background-color: white;
+  padding: 32px;
+  padding-top: 10px;
+  width: fit-content;
+  border-radius: 9px;
+  text-align: center;
+  border: 1px solid black;
+  animation: neonGlow 2s infinite alternate;
+  height: fit-content;
 }
-.GridText {
-  margin-top: 1.1rem;
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  color: #b1d4e0;
-  font-family: monospace;
-  line-height: 1.3rem;
-  font-size: 1rem;
-}
-.GridText:hover {
-  cursor: default;
-}
-.Grid1 {
-  background-color: #013463;
+.grid-item:nth-child(1) {
   grid-column: 1/2;
   grid-row: 1;
-  min-height: 19.6rem;
-  border-radius: 9px;
-  text-align: center;
-  box-shadow: 0 0 90px -10px #00407c94;
+  justify-self: end;
 }
-#showLocation {
-  font-weight: bold;
-}
-#showLocation:hover {
-  cursor: pointer;
-}
-
-.Grid2 {
-  background-color: #013463;
+.grid-item:nth-child(2) {
   grid-column: 2/2;
   grid-row: 2;
-  width: 20rem;
-  height: 20rem;
-  border-radius: 9px;
-  box-shadow: 0 0 100px 1px #00407c;
-  text-align: center;
 }
-.AboutHeader {
-  position: absolute;
-  opacity: 0.4;
-  grid-column: 2/2;
-  grid-row: 3;
-  bottom: 41rem;
-  right: -14rem;
-  display: inline;
-  width: 85rem;
-  font-size: 17rem;
-  color: #cccccc3b;
-}
-.languageList {
-  position: relative;
-  top: 5rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  gap: 0.3rem;
-}
-.arrowButton {
-  color: #b1d4e0;
-  display: inline;
-  padding: 0;
-  border: none;
-  background: none;
-  font-size: 4.5rem;
-  padding-bottom: 0.7rem;
-  opacity: 0.5;
-}
-.arrowButton:hover {
-  cursor: pointer;
-}
-.languageIcon {
-  height: 5.5rem;
-  width: 5.5rem;
-}
-
-.languageIconSmall {
-  height: 2.5rem;
-  width: 2.5rem;
-}
-.programming-language-text {
-  color: #b1d4e0;
-}
-
-.Grid3 {
-  text-align: center;
-  background-color: #013463;
-  width: 35vw;
+.grid-item:nth-child(3) {
   grid-column: 1/2;
-  grid-row: 4;
-  max-width: 35rem;
-  border-radius: 9px;
-  min-height: 15rem;
-  box-shadow: 0 0 100px 1px #00407c;
+  justify-self: end;
+  grid-row: 3;
 }
 
-.Grid4 {
-  background-color: #013463;
-  grid-column: 2/2;
-  grid-row: 5;
-  height: fit-content;
-  border-radius: 9px;
-  box-shadow: 0 0 150px 1px #00407c;
-  text-align: center;
+.about-header {
+  position: absolute;
 }
 
-#myAge {
-  overflow: auto;
-  display: inline;
-  resize: none;
-  width: max-content;
-}
-.GitHubIcon {
-  width: 50%;
-  height: 50%;
-  margin-bottom: 2rem;
-}
-.GitHubIcon:hover {
-  cursor: pointer;
-}
-@media (max-width: 95.9375em) {
-  .AboutHeader {
-    visibility: hidden;
-    display: inline;
-    right: -28.5rem;
-    font-size: 13rem;
+@keyframes neonGlow {
+  0% {
+    box-shadow: 0 0 20px #ff60bf, 0 0 60px #ff60bf;
   }
-  .AboutHeader::after {
-    visibility: visible;
-    content: "ABO\00a0\00a0\00a0\00a0\00a0\00a0UT";
-    letter-spacing: -0.1rem;
+  50% {
+    box-shadow: 0 0 30px #ff60bf, 0 0 90px #ff60bf;
   }
-}
-
-@media (max-width: 76.625em) {
-  .AboutHeader {
-    right: -30rem;
-    font-size: 10rem;
-  }
-  .AboutHeader::after {
-    content: "ABOU\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0T";
-  }
-}
-
-@media (max-width: 60.9375em) {
-  .AboutHeader {
-    transform: rotate(-90deg);
-    right: -2rem;
-    top: -3rem;
-    font-size: 8rem;
-  }
-  .AboutHeader::after {
-    content: "ABOUT";
-  }
-}
-
-@media (max-width: 37.5em) {
-  .GridInfoBox {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    width: 3px;
-  }
-  .Grid1 {
-    min-height: 19.6rem;
-    min-width: 16rem;
-    width: 85vw;
-    margin-right: 2.5em;
-  }
-  .Grid2 {
-    min-height: 15rem;
-    min-width: 16rem;
-    width: 85vw;
-    margin-left: 2em;
-  }
-  .Grid3 {
-    min-width: 20rem;
-    width: 85vw;
-    margin-right: 2.5em;
-  }
-  .Grid4 {
-    min-width: 16rem;
-    width: 85vw;
-    margin-left: 2em;
-  }
-  .SectionAbout {
-    width: 100vw;
-  }
-  .AboutHeader {
-    display: none;
-  }
-}
-@media (max-width: 20em) {
-  .Grid1 {
-    min-height: 19.6rem;
-    width: 120vw;
-    margin-right: 2.5em;
-  }
-  .Grid2 {
-    min-height: 15rem;
-    width: 120vw;
-    margin-left: 2.5em;
-  }
-  .Grid3 {
-    width: 120vw;
-    margin-right: 2.5em;
-  }
-  .Grid4 {
-    width: 120vw;
-    margin-left: 2.5em;
+  100% {
+    box-shadow: 0 0 20px #ff60bf, 0 0 60px #ff60bf;
   }
 }

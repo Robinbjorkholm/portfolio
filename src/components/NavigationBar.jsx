@@ -1,9 +1,12 @@
 import React, { Component } from "react";
-import SideNavBar from "./SideNavBar";
+import NavBar from "./NavBar";
 import MobileNavBar from "./MobileNavBar";
-import "../styles/SideNavBar.css";
+import "../styles/NavBar.css";
 
+
+//This component changes between the mobile and desktop navigation depending on the screensize 
 class NavigationBar extends Component {
+
   state = {
     height: window.innerHeight,
     width: window.innerWidth,
@@ -27,7 +30,7 @@ class NavigationBar extends Component {
   render() {
     return (
       <div>
-        {this.state.toggleMobileNavigation ? <MobileNavBar /> : <SideNavBar />}
+        {this.state.toggleMobileNavigation ? <MobileNavBar /> : <NavBar/>}
       </div>
     );
   }

@@ -1,0 +1,12 @@
+body {
+  background: linear-gradient(45deg, #ff00ffa9, #00ffffab);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Brush Script MT", cursive;
+}
+::-webkit-scrollbar {
+  display: none;
+  overflow: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

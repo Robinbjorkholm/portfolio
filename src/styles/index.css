@@ -1,0 +1,15 @@
+/*default all margin and padding to 0 because someone on the internet told me to always do so */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  background-image: url("../images/background.png");
+  background-repeat: no-repeat;
+  background-size: cover; /* Ensures the image covers the full viewport */
+  background-position: center center; /* Centers the image */
+  height: 100vh; /* Ensures the body takes up the full height of the viewport */
+  margin: 0; /* Removes any default margin */
+}

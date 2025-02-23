@@ -1,11 +1,77 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/ProjectSection.css";
-import { getProjects } from "../services/getProjectsService";
-import ProjectModal from "./ProjectModal";
-import { motion } from "framer-motion";
-import warningsign from ".././pictures/warningsign.png";
 
-class ProjectsSection extends Component {
+const ProjectsSection = ({ token }) => {
+  const [pinnedRepos, setPinnedRepos] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchPinnedRepos = async () => {
+      const query = `
+        {
+          viewer {
+            pinnedItems(first: 5) {
+              edges {
+                node {
+                  ... on Repository {
+                    id
+                    name
+                    owner {
+                      login
+                    }
+                    url
+                    description
+                    stargazerCount
+                    forkCount
+                  }
+                }
+              }
+            }
+          }
+        }
+      `;
+
+      const response = await fetch('https://api.github.com/graphql', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`, 
+        },
+        body: JSON.stringify({ query }),
+      });
+
+      const data = await response.json();
+      setPinnedRepos(data.data.viewer.pinnedItems.edges);
+      setLoading(false);
+    };
+
+    fetchPinnedRepos();
+  }, [token]);
+
+  if (loading) return <p>Loading pinned repositories...</p>;
+
+  return (
+    <div>
+      <h3>Pinned Repositories</h3>
+      <ul>
+        {pinnedRepos.map((repo) => (
+          <li key={repo.node.id}>
+            <a href={repo.node.url} target="_blank" rel="noopener noreferrer">
+              {repo.node.name}
+            </a>
+            <p>{repo.node.description || 'No description available'}</p>
+            <p>⭐ {repo.node.stargazerCount} Stars</p>
+            <p>🍴 {repo.node.forkCount} Forks</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default ProjectsSection;
+
+/*class ProjectsSection extends Component {
   state = {
     Projects: [],
     selectedModalId: null,
@@ -23,9 +89,11 @@ class ProjectsSection extends Component {
     this.setState({ Projects: data });
     document.addEventListener("mousedown", this.handleClickOutside);
   }
+
   componentWillUnmount() {
     document.removeEventListener("mousedown", this.handleClickOutside);
   }
+
   handleClickOutside(event) {
     if (this.outsideRef && !this.outsideRef.current.contains(event.target)) {
       this.setState({
@@ -33,19 +101,21 @@ class ProjectsSection extends Component {
       });
     }
   }
+
   openModal = (project) => {
     this.setState({ selectedModalId: project._id, isActive: true });
   };
+
   closeModal = (project) => {
     this.setState({ selectedModalId: null, isActive: null });
   };
 
   render() {
     return (
-      <div className="SectionProjects" id="Projects">
-        <h1 className="ProjectsHeader">PROJECTS </h1>
+      <div className="projects-section" id="Projects">
+        <h2 className="projects-header">PROJECTS </h2>
         {this.state.Projects.length !== 0 ? (
-          <ul className="ProjectsDisplay">
+          <ul className="display-projects-grid">
             {this.state.Projects.map((project) => {
               const ShowModal = project._id === this.state.selectedModalId;
 
@@ -53,10 +123,10 @@ class ProjectsSection extends Component {
                 <motion.li
                   ref={this.outsideRef}
                   key={project._id}
-                  className={!ShowModal ? "ProjectsShowcase" : "active"}
+                  className={!ShowModal ? "display-project-li" : "active"}
                 >
                   <motion.img
-                    className="ProjectImage"
+                    className="project-background-image"
                     src={project.image}
                     alt="error getting image"
                     onClick={() => {
@@ -64,7 +134,7 @@ class ProjectsSection extends Component {
                     }}
                   />
                   <motion.button
-                    className="ProjectLiveVersionButton"
+                    className="live-version-button"
                     disabled={!project.liveVersion}
                     whileHover={
                       project.liveVersion ? { scale: 1.1 } : { scale: 1 }
@@ -75,7 +145,7 @@ class ProjectsSection extends Component {
                   </motion.button>
                   <motion.button
                     whileHover={{ scale: 1.1 }}
-                    className="ProjectCodeButton"
+                    className="github-repository-button"
                     onClick={() => window.open(project.Code)}
                   >
                     Code
@@ -108,10 +178,9 @@ class ProjectsSection extends Component {
               </p>
             </div>
           </div>
-        )}
+        )}}
       </div>
     );
   }
 }
-
-export default ProjectsSection;
+*/

@@ -1,0 +1,50 @@
+.toggle-navbar {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-color: transparent;
+  height: 80px;
+  z-index: 2;
+}
+.navigation-bar {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  background-color: #333333;
+  align-items: center;
+  justify-content: center;
+  min-height: fit-content;
+}
+
+.navigation-bar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.navigation-bar li {
+  cursor: pointer;
+  font-size: 2.5rem;
+}
+.navigation-bar #title {
+  letter-spacing: 1px;
+  font-family: "Mistral", cursive;
+  font-weight: bold;
+  color: white;
+  outline: 1px;
+  -webkit-text-stroke: 2px #ff60bf;
+}
+
+.navigation-bar li:hover {
+  text-shadow: 0 0px #ff60bf, 0 0 5px #ff60bf, 0 0 15px #ff60bf;
+}
+.navigation-bar li :not(:hover) {
+  transition: all 0.05s;
+}
+
+@media (max-width: 50em) {
+  .navigation-bar li {
+    font-size: 2rem;
+  }
+}

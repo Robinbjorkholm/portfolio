@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { TfiClose } from "react-icons/tfi";
 
+
+// This component is used for rendering the mobile navigation for mobile users, for the desktop navigation go to "NavigationBar.jsx"
 function MobileNavBar() {
   const [toggleMobileNav, setMobileNav] = useState(false);
 
